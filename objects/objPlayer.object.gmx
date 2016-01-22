@@ -116,7 +116,7 @@ var notOnBlock = (place_free(x,y+(global.grav)));
 var onVineL = (place_meeting(x-1,y,objWalljumpL) &amp;&amp; notOnBlock);
 var onVineR = (place_meeting(x+1,y,objWalljumpR) &amp;&amp; notOnBlock);
 
-if (global.hp == 0) {
+if (global.hp &lt;= 0) {
     scrKillPlayer();
 }
 if (invincible) {

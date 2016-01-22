@@ -204,6 +204,7 @@
     </objects>
     <objects name="enemies">
       <object>objects\objEnemy</object>
+      <object>objects\objWalkingEnemy</object>
     </objects>
   </objects>
   <rooms name="rooms">

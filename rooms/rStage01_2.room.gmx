@@ -86,6 +86,10 @@
     <instance objName="objEnemy" x="224" y="544" name="inst_B037A5D5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objEnemy" x="416" y="416" name="inst_177F6E56" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objEnemy" x="672" y="416" name="inst_C53E9BC5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objEnemy" x="928" y="416" name="inst_CDDD4B37" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objEnemy" x="1120" y="352" name="inst_DC4D1FE3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWalkingEnemy" x="1088" y="544" name="inst_F67AA0B9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWalkingEnemy" x="1920" y="544" name="inst_ACE73EBB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bAllTiles" x="32" y="576" w="32" h="32" xo="32" yo="96" id="10002288" name="inst_78A71CD0" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
