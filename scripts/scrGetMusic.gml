@@ -8,19 +8,6 @@ switch (room)                       //determines which song to play
     case rMenu:
     case rOptions:
     case rDifficultySelect:
-    case rStage01:
-    //case rStage02:                //this room has a play music object in it so it doesnt need to be included in this script
-        roomSong = musGuyRock;
-        break;                      //make sure to always put a break after setting the song
-    case rCherryBoss:
-        roomSong = musMegaman;
-        break;
-    case rMiku:
-        roomSong = -2;              //don't change the music in any way (the Miku object plays it)
-        break;
-    case rEnd:
-        roomSong = -1;              //play nothing
-        break;
     default:                        //default option in case the room does not have a song set
         roomSong = -1;
         break;

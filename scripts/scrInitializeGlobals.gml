@@ -12,6 +12,7 @@ global.savePlayerXScale = 1;
 global.grav = 1;
 global.actualGrav = 1.75;
 global.saveGrav = 1;
+global.hp = 3;
 
 for (var i = 8; i >= 0; i--)
 {

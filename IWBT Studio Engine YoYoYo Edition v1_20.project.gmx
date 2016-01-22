@@ -202,6 +202,9 @@
       <object>objects\objBossIndicator</object>
       <object>objects\objGameClear</object>
     </objects>
+    <objects name="enemies">
+      <object>objects\objEnemy</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <rooms name="init">

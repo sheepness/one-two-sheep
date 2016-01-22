@@ -37,6 +37,11 @@ maxVspeed = 9;  //max vertical speed
 image_speed = 0.2; //initial speed of animation
 onPlatform = 0; //sets if player is currently standing on a platform
 
+invincible = false;
+invincibleTimer = 20;
+flashTimer = 4;
+flashing = false;
+
 scrSetPlayerMask(); //set the player's hitbox
 
 if (global.difficulty == 0 &amp;&amp; global.gameStarted)   //create bow
@@ -111,6 +116,22 @@ var notOnBlock = (place_free(x,y+(global.grav)));
 var onVineL = (place_meeting(x-1,y,objWalljumpL) &amp;&amp; notOnBlock);
 var onVineR = (place_meeting(x+1,y,objWalljumpR) &amp;&amp; notOnBlock);
 
+if (global.hp == 0) {
+    scrKillPlayer();
+}
+if (invincible) {
+    invincibleTimer--;
+    flashTimer--;
+    if (flashTimer &lt;=0) {
+        flashing = !flashing;
+        flashTimer = 4;
+    }
+    if (invincibleTimer &lt;=0) {
+        invincible = false;
+        invincibleTimer = 40;
+        flashing = 0;
+    }
+}
 if (h != 0)  //player is moving
 {
     if (!onVineR &amp;&amp; !onVineL)   //make sure not currently touching a vine
@@ -231,6 +252,32 @@ if (onVineL || onVineR)
             sprite_index = sprPlayerFall;
         }
     }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objEnemy">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (!invincible){
+global.hp--;
+invincible = true;
 }
 </string>
           </argument>
@@ -388,8 +435,9 @@ var drawY = y;
 
 if (global.grav == -1)      //need to draw the player a pixel off in the y-axis when flipped for some reason
     drawY += 1;
-
+if (!flashing)
 draw_sprite_ext(sprite_index,image_index,drawX,drawY,image_xscale*global.player_xscale,image_yscale*global.grav,image_angle,image_blend,image_alpha);
+draw_healthbar(view_xview+32,view_yview+32, view_xview+160,view_yview+48, global.hp/0.03, c_black, c_red, c_green, 0, true, true);
 
 //draw the hitbox
 if (global.showHitbox)
