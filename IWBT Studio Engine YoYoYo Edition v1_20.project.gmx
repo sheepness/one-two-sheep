@@ -55,6 +55,7 @@
       <sprite>sprites\sprSlideBlockR</sprite>
       <sprite>sprites\sprSlideBlockL</sprite>
       <sprite>sprites\sprSaveBlocker</sprite>
+      <sprite>sprites\sprSlopeMask</sprite>
     </sprites>
     <sprites name="platforms">
       <sprite>sprites\sprPlatform</sprite>
@@ -102,6 +103,7 @@
       <script>scripts\scrSetPlayerMask.gml</script>
       <script>scripts\scrKillPlayer.gml</script>
       <script>scripts\scrFlipGrav.gml</script>
+      <script>scripts\scrWalk.gml</script>
     </scripts>
     <scripts name="world">
       <script>scripts\scrInitializeGlobals.gml</script>
@@ -162,6 +164,7 @@
       <object>objects\objSlideBlockR</object>
       <object>objects\objBossBlock</object>
       <object>objects\objSaveBlocker</object>
+      <object>objects\objSlope</object>
     </objects>
     <objects name="platforms">
       <object>objects\objPlatform</object>
