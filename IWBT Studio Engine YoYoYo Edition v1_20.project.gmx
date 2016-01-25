@@ -209,6 +209,10 @@
       <object>objects\objEnemy</object>
       <object>objects\objWalkingEnemy</object>
     </objects>
+    <objects name="switches">
+      <object>objects\objSwitchLock</object>
+      <object>objects\objSwitch</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <rooms name="init">
