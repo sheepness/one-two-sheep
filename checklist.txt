@@ -13,3 +13,8 @@ Level design:
 	- Combat system
 	- Platforming features (ie ladders, boxes)
 	- Proper jumping physics
+Game design:
+	- Theme
+	- Story
+	- Setting
+	- Related game sprites
