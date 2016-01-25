@@ -49,8 +49,7 @@
           <argument>
             <kind>1</kind>
             <string>if global.trigger[trg] {
-    visible = !visible;
-    solid = !solid;
+    instance_destroy();
 }
 </string>
           </argument>

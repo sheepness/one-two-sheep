@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>hspeed = 1;
+            <string>event_inherited();
+hspeed = 1;
 </string>
           </argument>
         </arguments>
@@ -48,7 +49,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (place_free(x+hspeed, y)) {
+            <string>event_inherited();
+if (!place_free(x+hspeed, y)) {
     hspeed = -hspeed;
 }
 </string>
