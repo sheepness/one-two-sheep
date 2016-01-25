@@ -10,7 +10,7 @@ global.savePlayerX = 0;
 global.savePlayerY = 0;
 global.savePlayerXScale = 1;
 global.grav = 1;
-global.actualGrav = 1.75;
+global.actualGrav = 1.25;
 global.saveGrav = 1;
 global.hp = 3;
 

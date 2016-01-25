@@ -12,3 +12,4 @@ Level design:
 	- Enemies
 	- Combat system
 	- Platforming features (ie ladders, boxes)
+	- Proper jumping physics

@@ -135,14 +135,18 @@ if (invincible) {
 }
 if (h != 0)  //player is moving
 {
-    if (!onVineR &amp;&amp; !onVineL)   //make sure not currently touching a vine
-    {
         global.player_xscale = h;
-    }
     if ((h == -1 &amp;&amp; !onVineR) || (h == 1 &amp;&amp; !onVineL))
     {
     //scrWalk(h);
+    hspeed +=h*0.5;
+    if (h == 1) {
+    if (hspeed&gt;h*maxSpeed)
     hspeed = h*maxSpeed;
+    } else if (h == -1) {
+        if (hspeed&lt;h*maxSpeed)
+        hspeed = h*maxSpeed;
+    }
         
         sprite_index = sprPlayerRunning;
         image_speed = 0.5;
@@ -150,8 +154,17 @@ if (h != 0)  //player is moving
 }
 else    //player is not moving
 {
-    if (slipBlockTouching == noone) //not touching a slip block, stop immediately
-        hspeed = 0;
+hh = 0;
+if (hspeed&gt;0)
+hh = 1;
+else if (hspeed&lt;0)
+hh = -1;
+        if (abs(hspeed)&lt;=0.5){
+            hspeed = 0;
+            }
+        else {
+        hspeed -= hh*0.5;
+        }
   
     sprite_index = sprPlayerIdle;
     image_speed = 0.2;
@@ -188,7 +201,7 @@ if (!frozen)    //check if frozen before doing anything
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objEnemy">
+    <event eventtype="4" ename="objPlayerKiller">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -334,7 +347,7 @@ if (!place_free(x+hspeed,y+vspeed)) {hspeed = 0;}
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.edgeDeath &amp;&amp; (x &lt; 0 || x &gt; room_width || y &lt; 0 || y &gt; room_height))  //check if player has left the room
+            <string>if (global.edgeDeath &amp;&amp; (/*x &lt; 0 || x &gt; room_width || y &lt; 0 || */y &gt; room_height))  //check if player has left the room
     scrKillPlayer();
 </string>
           </argument>
@@ -368,11 +381,6 @@ if (global.grav == -1)      //need to draw the player a pixel off in the y-axis 
 if (!flashing)
 draw_sprite_ext(sprite_index,image_index,drawX,drawY,image_xscale*global.player_xscale,image_yscale*global.grav,image_angle,image_blend,image_alpha);
 draw_healthbar(view_xview+32,view_yview+32, view_xview+160,view_yview+48, global.hp/0.03, c_black, c_red, c_green, 0, true, true);
-
-draw_set_color(c_black);
-draw_set_font(fDefault12);
-draw_set_halign(fa_left);
-draw_text(view_xview+64,view_yview+0,anglesweep);
 //draw the hitbox
 if (global.showHitbox)
     draw_sprite_ext(mask_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha*0.8);

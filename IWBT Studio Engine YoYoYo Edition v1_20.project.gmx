@@ -208,6 +208,9 @@
     <objects name="enemies">
       <object>objects\objEnemy</object>
       <object>objects\objWalkingEnemy</object>
+      <object>objects\objShootingEnemy</object>
+      <object>objects\objEnemyBullet</object>
+      <object>objects\objPlayerKiller</object>
     </objects>
     <objects name="switches">
       <object>objects\objSwitchLock</object>
@@ -224,6 +227,7 @@
     </rooms>
     <rooms name="sample">
       <room>rooms\rStage01_2</room>
+      <room>rooms\room7</room>
     </rooms>
     <room>rooms\rTemplate</room>
   </rooms>
