@@ -100,7 +100,7 @@ if (global.gameStarted)
     {
         if (keyboard_check_pressed(global.restartbutton))
         {
-            global.hp = 3;
+            global.hp = global.maxHP;
             //stop death music
             audio_stop_sound(global.gameOverMusic);
             

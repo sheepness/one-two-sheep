@@ -28,8 +28,8 @@
             <string>anglesweep = 0;
 frozen = 0; //sets if player can move or not
 
-jump = 17 * global.grav; //set how fast the player jumps
-jump2 = 14 * global.grav; //sets how fast the player double jumps
+jump = 14 * global.grav; //set how fast the player jumps
+jump2 = 8 * global.grav; //sets how fast the player double jumps
 gravity = 0.4 * global.grav*global.actualGrav; //player gravity
 
 djump = global.player_djump; //allow the player to double jump as soon as he spawns
@@ -41,8 +41,8 @@ onPlatform = 0; //sets if player is currently standing on a platform
 shootable = true;
 
 invincible = false;
-invincibleTimer = 20;
-flashTimer = 4;
+invincibleTimer = 100;
+flashTimer = 5;
 flashing = false;
 
 scrSetPlayerMask(); //set the player's hitbox
@@ -229,6 +229,32 @@ if (!frozen)    //check if frozen before doing anything
     if(keyboard_check_pressed(global.suicidebutton))
         scrKillPlayer();
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objHeal">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (global.hp&lt;global.maxHP)
+global.hp++;
+with(other)
+instance_destroy();
 </string>
           </argument>
         </arguments>

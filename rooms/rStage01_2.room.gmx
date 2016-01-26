@@ -4,7 +4,7 @@
   <width>2400</width>
   <height>608</height>
   <vsnap>32</vsnap>
-  <hsnap>16</hsnap>
+  <hsnap>32</hsnap>
   <isometric>0</isometric>
   <speed>30</speed>
   <persistent>0</persistent>
@@ -83,20 +83,25 @@
     <instance objName="objBlock" x="2112" y="352" name="inst_48B2D9E6" locked="0" code="" scaleX="2" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="2208" y="416" name="inst_31CFBF0A" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objSmoothCamera" x="128" y="544" name="inst_519EADB0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWalkingEnemy" x="1088" y="544" name="inst_F67AA0B9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objWalkingEnemy" x="1920" y="544" name="inst_ACE73EBB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWalkingEnemy" x="1120" y="512" name="inst_F67AA0B9" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objWalkingEnemy" x="1920" y="512" name="inst_ACE73EBB" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objSwitch" x="1632" y="480" name="inst_12A147BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSwitchLock" x="1696" y="384" name="inst_5E68B495" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSwitchLock" x="1696" y="352" name="inst_5E68B495" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objEnemy" x="1280" y="416" name="inst_906201A7" locked="0" code="hp = 50;" scaleX="5" scaleY="5" colour="4294967295" rotation="0"/>
-    <instance objName="objExplodingShootingEnemy" x="432" y="416" name="inst_9BDC1F32" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objExplodingShootingEnemy" x="688" y="416" name="inst_663EE186" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objAimedShootingEnemy" x="560" y="480" name="inst_50436054" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objAimedShootingEnemy" x="912" y="416" name="inst_6FB3E915" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objExplodingShootingEnemy" x="624" y="544" name="inst_0C487D37" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objAimedShootingEnemy" x="816" y="480" name="inst_65597C13" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objAimedShootingEnemy" x="944" y="544" name="inst_EB6FB403" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objAimedShootingEnemy" x="1120" y="192" name="inst_18468F39" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objExplodingShootingEnemy" x="1008" y="512" name="inst_424C63C8" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objExplodingShootingEnemy" x="416" y="384" name="inst_9BDC1F32" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objAimedShootingEnemy" x="544" y="448" name="inst_50436054" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objAimedShootingEnemy" x="896" y="384" name="inst_6FB3E915" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objAimedShootingEnemy" x="800" y="448" name="inst_65597C13" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objAimedShootingEnemy" x="928" y="512" name="inst_EB6FB403" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objAimedShootingEnemy" x="1120" y="160" name="inst_18468F39" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objExplodingShootingEnemy" x="1024" y="512" name="inst_424C63C8" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objFloatingEnemy" x="576" y="256" name="inst_E7053870" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objFloatingEnemy" x="352" y="256" name="inst_B51DD50D" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objSpinningShootingEnemy" x="672" y="384" name="inst_87767424" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objAimedShootingEnemy" x="288" y="448" name="inst_95DC77B8" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objSpinningShootingEnemy" x="992" y="320" name="inst_2FE1C1DB" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objFloatingEnemy" x="544" y="64" name="inst_F39B3E78" locked="0" code="hp = 20;&#xA;" scaleX="3" scaleY="3" colour="4294967295" rotation="0"/>
+    <instance objName="objAimedShootingEnemy" x="832" y="32" name="inst_9FB8BD25" locked="0" code="hp = 20;&#xA;" scaleX="3" scaleY="3" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bAllTiles" x="32" y="576" w="32" h="32" xo="32" yo="96" id="10002288" name="inst_78A71CD0" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

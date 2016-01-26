@@ -5,10 +5,10 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>objShootingEnemy</parentName>
+  <parentName>objEnemy</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="2" enumb="0">
+    <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,15 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (instance_exists(objPlayer))
-scrShootBullet(x+sprite_width*0.5, y+sprite_width*0.5, point_direction(x+sprite_width*0.5, y+sprite_width*0.5, objPlayer.x, objPlayer.y), 4);
-firing = false;
+            <string>event_inherited();
+startY = y;
+vspeed = 3;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="7" enumb="10">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -50,7 +50,8 @@ firing = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[0] = 200;
+            <string>event_inherited();
+gravity = 0.01*(startY-y);
 </string>
           </argument>
         </arguments>

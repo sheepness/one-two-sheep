@@ -206,16 +206,19 @@
       <object>objects\objBossItem</object>
       <object>objects\objBossIndicator</object>
       <object>objects\objGameClear</object>
+      <object>objects\objHeal</object>
     </objects>
     <objects name="enemies">
       <object>objects\objEnemy</object>
       <object>objects\objWalkingEnemy</object>
       <object>objects\objAimedShootingEnemy</object>
+      <object>objects\objSpinningShootingEnemy</object>
       <object>objects\objShootingEnemy</object>
       <object>objects\objEnemyBullet</object>
       <object>objects\objPlayerKiller</object>
       <object>objects\objDamageIndicator</object>
       <object>objects\objExplodingShootingEnemy</object>
+      <object>objects\objFloatingEnemy</object>
     </objects>
     <objects name="switches">
       <object>objects\objSwitchLock</object>

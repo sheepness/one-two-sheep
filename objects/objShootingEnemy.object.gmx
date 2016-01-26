@@ -51,6 +51,7 @@ firing = false;
           <argument>
             <kind>1</kind>
             <string>event_inherited();
+if (instance_exists(objPlayer))
 if (distance_to_point(objPlayer.x, objPlayer.y)&lt;range) {
 sprite_index = sprBlock;
 if (!firing) {

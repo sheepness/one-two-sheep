@@ -10,9 +10,10 @@ global.savePlayerX = 0;
 global.savePlayerY = 0;
 global.savePlayerXScale = 1;
 global.grav = 1;
-global.actualGrav = 1.25;
+global.actualGrav = 1.75;
 global.saveGrav = 1;
-global.hp = 3;
+global.maxHP = 3;
+global.hp = global.maxHP;
 
 for (var i = 8; i >= 0; i--)
 {
