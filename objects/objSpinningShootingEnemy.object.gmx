@@ -49,7 +49,7 @@ shootAngle = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scrShootBullet(x+sprite_width*0.5, y+sprite_width*0.5, shootAngle), 4);
+            <string>scrShootBullet(x+sprite_width*0.5, y+sprite_width*0.5, shootAngle, 4);
 shootAngle+=30;
 firing = false;
 </string>
