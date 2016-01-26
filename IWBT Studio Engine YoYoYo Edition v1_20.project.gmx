@@ -132,6 +132,7 @@
     <font>fonts\fDefault24</font>
     <font>fonts\fDefault18</font>
     <font>fonts\fDefault12</font>
+    <font>fonts\fDamage10</font>
   </fonts>
   <objects name="objects">
     <objects name="world">
@@ -211,6 +212,7 @@
       <object>objects\objShootingEnemy</object>
       <object>objects\objEnemyBullet</object>
       <object>objects\objPlayerKiller</object>
+      <object>objects\objDamageIndicator</object>
     </objects>
     <objects name="switches">
       <object>objects\objSwitchLock</object>
