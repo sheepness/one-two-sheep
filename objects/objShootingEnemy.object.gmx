@@ -26,33 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>event_inherited();
-range = 192;
-firing = false;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>bullet = instance_create(x+16, y+16, objEnemyBullet);
-bullet.direction = point_direction(x+16, y+16, objPlayer.x, objPlayer.y);
-bullet.speed = 4;
+range = 384;
 firing = false;
 </string>
           </argument>
@@ -80,12 +54,35 @@ firing = false;
 if (distance_to_point(objPlayer.x, objPlayer.y)&lt;range) {
 sprite_index = sprBlock;
 if (!firing) {
-    alarm[0] = 25;
+    event_user(0);
     firing = true;
     }
 } else {
 sprite_index = sprKillerBlock;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>// shoot stuff
 </string>
           </argument>
         </arguments>

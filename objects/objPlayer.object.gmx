@@ -38,6 +38,8 @@ maxVspeed = 9;  //max vertical speed
 image_speed = 0.2; //initial speed of animation
 onPlatform = 0; //sets if player is currently standing on a platform
 
+shootable = true;
+
 invincible = false;
 invincibleTimer = 20;
 flashTimer = 4;
@@ -79,6 +81,29 @@ if (global.autosave) //save the game if currently set to autosave
 
 with (objBow)
     instance_destroy();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>shootable = true;
 </string>
           </argument>
         </arguments>
@@ -192,8 +217,11 @@ if (abs(vspeed) &gt; maxVspeed) {vspeed = sign(vspeed)*maxVspeed;} //check if mo
 
 if (!frozen)    //check if frozen before doing anything
 {
-    if(keyboard_check_pressed(global.shotbutton))
+    if(keyboard_check(global.shotbutton)&amp;&amp;shootable) {
         scrPlayerShoot();
+        shootable = false;
+        alarm[0] = 10;
+        }
     if(keyboard_check_pressed(global.jumpbutton))
         scrPlayerJump();
     if(keyboard_check_released(global.jumpbutton))

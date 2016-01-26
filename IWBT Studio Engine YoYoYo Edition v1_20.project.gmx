@@ -125,6 +125,7 @@
     <scripts name="functions">
       <script>scripts\scrMakeShapes.gml</script>
       <script>scripts\scrMakeCircle.gml</script>
+      <script>scripts\scrShootBullet.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -209,10 +210,12 @@
     <objects name="enemies">
       <object>objects\objEnemy</object>
       <object>objects\objWalkingEnemy</object>
+      <object>objects\objAimedShootingEnemy</object>
       <object>objects\objShootingEnemy</object>
       <object>objects\objEnemyBullet</object>
       <object>objects\objPlayerKiller</object>
       <object>objects\objDamageIndicator</object>
+      <object>objects\objExplodingShootingEnemy</object>
     </objects>
     <objects name="switches">
       <object>objects\objSwitchLock</object>
