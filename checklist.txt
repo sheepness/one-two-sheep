@@ -22,9 +22,17 @@ Sounds:
 	- Game over music
 Level design:
 	- Inventory
+		- Weapons
 	- Proper level structure
 	- Enemies
 	- Combat system
+	- Powerups
+	- Experience
+	- Save system
+	- NPCs
+	- Dialogue
+	- Cutscenes
+	- 
 	- Platforming features (ie ladders, boxes)
 	- Proper jumping physics
 Game design:
