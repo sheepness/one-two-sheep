@@ -1,5 +1,6 @@
 Spriting (high priority): - Sprites that are made and pushed to the repository should probably be reported on in the discord channel
 	- Player sprites
+	- Coin sprites, upgrade sprites, health sprites (like hearts or something), powerup sprites, item sprites
 	- Enemy sprites
 		- Standing enemies
 		- Walking enemies
@@ -54,6 +55,7 @@ Level design/Ideas to be tested (high priority): - maybe use branches for certai
 		- Shoot with mouse??? (yeah probably a good idea aye FailFish)
 	- Powerups
 	- Coins/currency
+		- Destroyable things
 	- Upgrades
 	- Experience/level system
 	- Attributes (attack, defence, agility, dexterity, health, etc.)
