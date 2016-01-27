@@ -287,13 +287,7 @@ else
     
     if(i == select)
     {
-        draw_sprite(sprCherry,appleIndex,x+(i-1)*239+5,y+310);
-        draw_sprite(sprCherry,appleIndex,x+(i-1)*239+25,y+310);
-        draw_sprite(sprCherry,appleIndex,x+(i-1)*239+45,y+310);
         draw_sprite(sprPlayerIdle,playerIndex,x+(i-1)*239+65,y+310);
-        draw_sprite(sprCherry,appleIndex,x+(i-1)*239+85,y+310);
-        draw_sprite(sprCherry,appleIndex,x+(i-1)*239+105,y+310);
-        draw_sprite(sprCherry,appleIndex,x+(i-1)*239+125,y+310);
     }
 }
 

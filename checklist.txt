@@ -1,0 +1,20 @@
+Spriting:
+	- Player sprites
+	- Enemy sprites
+	- Tile sprites (MUST be done in Backgrounds folder)
+Sounds:
+	- Platforming sound effects
+	- Level music
+	- Game over music
+Level design:
+	- Inventory
+	- Proper level structure
+	- Enemies
+	- Combat system
+	- Platforming features (ie ladders, boxes)
+	- Proper jumping physics
+Game design:
+	- Theme
+	- Story
+	- Setting
+	- Related game sprites

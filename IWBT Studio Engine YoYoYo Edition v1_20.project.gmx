@@ -55,23 +55,11 @@
       <sprite>sprites\sprSlideBlockR</sprite>
       <sprite>sprites\sprSlideBlockL</sprite>
       <sprite>sprites\sprSaveBlocker</sprite>
+      <sprite>sprites\sprSlopeMask</sprite>
     </sprites>
     <sprites name="platforms">
       <sprite>sprites\sprPlatform</sprite>
       <sprite>sprites\sprMovingPlatform</sprite>
-    </sprites>
-    <sprites name="killers">
-      <sprite>sprites\sprSpikeUp</sprite>
-      <sprite>sprites\sprSpikeRight</sprite>
-      <sprite>sprites\sprSpikeLeft</sprite>
-      <sprite>sprites\sprSpikeDown</sprite>
-      <sprite>sprites\sprMiniUp</sprite>
-      <sprite>sprites\sprMiniRight</sprite>
-      <sprite>sprites\sprMiniLeft</sprite>
-      <sprite>sprites\sprMiniDown</sprite>
-      <sprite>sprites\sprCherry</sprite>
-      <sprite>sprites\sprMiku</sprite>
-      <sprite>sprites\sprCherryWhite</sprite>
     </sprites>
     <sprites name="misc">
       <sprite>sprites\sprWater</sprite>
@@ -81,14 +69,6 @@
       <sprite>sprites\sprSign</sprite>
       <sprite>sprites\sprGravityUp</sprite>
       <sprite>sprites\sprGravityDown</sprite>
-    </sprites>
-    <sprites name="triggers">
-      <sprite>sprites\sprTriggerMask</sprite>
-      <sprite>sprites\sprButton</sprite>
-      <sprite>sprites\sprSpikeTriggerDown</sprite>
-      <sprite>sprites\sprSpikeTriggerLeft</sprite>
-      <sprite>sprites\sprSpikeTriggerRight</sprite>
-      <sprite>sprites\sprSpikeTriggerUp</sprite>
     </sprites>
     <sprites name="saves">
       <sprite>sprites\sprSaveMask</sprite>
@@ -123,6 +103,7 @@
       <script>scripts\scrSetPlayerMask.gml</script>
       <script>scripts\scrKillPlayer.gml</script>
       <script>scripts\scrFlipGrav.gml</script>
+      <script>scripts\scrWalk.gml</script>
     </scripts>
     <scripts name="world">
       <script>scripts\scrInitializeGlobals.gml</script>
@@ -144,6 +125,7 @@
     <scripts name="functions">
       <script>scripts\scrMakeShapes.gml</script>
       <script>scripts\scrMakeCircle.gml</script>
+      <script>scripts\scrShootBullet.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -151,6 +133,7 @@
     <font>fonts\fDefault24</font>
     <font>fonts\fDefault18</font>
     <font>fonts\fDefault12</font>
+    <font>fonts\fDamage10</font>
   </fonts>
   <objects name="objects">
     <objects name="world">
@@ -183,49 +166,13 @@
       <object>objects\objSlideBlockR</object>
       <object>objects\objBossBlock</object>
       <object>objects\objSaveBlocker</object>
+      <object>objects\objSlope</object>
     </objects>
     <objects name="platforms">
       <object>objects\objPlatform</object>
       <object>objects\objMovingPlatform</object>
       <object>objects\objBlockFall</object>
       <object>objects\objBlockRise</object>
-    </objects>
-    <objects name="killers">
-      <object>objects\objPlayerKiller</object>
-      <object>objects\objSpikeUp</object>
-      <object>objects\objSpikeRight</object>
-      <object>objects\objSpikeLeft</object>
-      <object>objects\objSpikeDown</object>
-      <object>objects\objMiniUp</object>
-      <object>objects\objMiniRight</object>
-      <object>objects\objMiniLeft</object>
-      <object>objects\objMiniDown</object>
-      <object>objects\objCherry</object>
-      <object>objects\objCherryBounce</object>
-      <object>objects\objCherryBounceRandom</object>
-      <object>objects\objCherryBounceLat</object>
-      <object>objects\objCherryBounceVert</object>
-      <object>objects\objKillerBlock</object>
-      <objects name="bosses">
-        <object>objects\objCherryEnemyTest</object>
-        <object>objects\objCherryBossTest</object>
-        <objects name="miku">
-          <object>objects\objMiku</object>
-          <object>objects\objCherryRandomCol</object>
-          <object>objects\objCherryRandomColExplode</object>
-          <object>objects\objCherryRandomColBounce</object>
-        </objects>
-      </objects>
-    </objects>
-    <objects name="triggers">
-      <object>objects\objFreeTrigger</object>
-      <object>objects\objTriggerButton</object>
-      <object>objects\objKillerTrigger</object>
-      <object>objects\objSpikeTriggerDown</object>
-      <object>objects\objSpikeTriggerLeft</object>
-      <object>objects\objSpikeTriggerRight</object>
-      <object>objects\objSpikeTriggerUp</object>
-      <object>objects\objCherryTrigger</object>
     </objects>
     <objects name="misc">
       <object>objects\objWater</object>
@@ -259,6 +206,21 @@
       <object>objects\objBossItem</object>
       <object>objects\objBossIndicator</object>
       <object>objects\objGameClear</object>
+      <object>objects\objHeal</object>
+    </objects>
+    <objects name="enemies">
+      <object>objects\objEnemy</object>
+      <object>objects\objAimedShootingEnemy</object>
+      <object>objects\objSpinningShootingEnemy</object>
+      <object>objects\objShootingEnemy</object>
+      <object>objects\objEnemyBullet</object>
+      <object>objects\objPlayerKiller</object>
+      <object>objects\objDamageIndicator</object>
+      <object>objects\objExplodingShootingEnemy</object>
+    </objects>
+    <objects name="switches">
+      <object>objects\objSwitchLock</object>
+      <object>objects\objSwitch</object>
     </objects>
   </objects>
   <rooms name="rooms">
@@ -270,14 +232,8 @@
       <room>rooms\rDifficultySelect</room>
     </rooms>
     <rooms name="sample">
-      <room>rooms\rStage01</room>
-      <room>rooms\rCherryBoss</room>
-      <room>rooms\rStage02</room>
-      <room>rooms\rMiku</room>
-      <room>rooms\rEnd</room>
-      <room>rooms\rSampleRoom</room>
-      <room>rooms\rTest</room>
       <room>rooms\rStage01_2</room>
+      <room>rooms\room7</room>
     </rooms>
     <room>rooms\rTemplate</room>
   </rooms>
