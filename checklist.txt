@@ -71,22 +71,21 @@ Game design (very high priority):
 	- Theme (VERY IMPORTANT!!!)
 	- Story
 	- Setting (planning the visual design)
-	- Related game sprites
 	- Style (eg open-world, etc.)
-		- Decide on the balance on the sub-genres (kinda)
+		- Decide on the balance on the sub-genres (so like, how much is just straight-forward stuff and how much is open)
 	- Map design/planning of arrangement of levels
 		- Consider the intended time length of every area and how slow progress should be made
 		- Plan out any backtracking (eg need to collect an important item to unlock an ability, then go back)
 		- Sidequests/bonus rooms
 		- Important to mark out 'safe areas'
+		- Plan of intended route throughout game (not required if linear gameplay)
 	- Art type (eg minimal, 8-bit, etc.)
 	- Sound type
 	- Type of gameplay (combat or platforming oriented, or something else?)
 		- Puzzles?????
 		- Exploration?????
 		- "you gotta get all 5 of these things before you can get past, m8"
-	- Plan of intended route throughout game (not required if linear gameplay)
-	- Level structure (ie planning what levels will look like, eg going upwards or rightwards in a certain level)
+	- Level structure (ie planning what individual levels will look like, eg going upwards or rightwards in a certain level)
 	- Difficulty curve (pretty darn important)
 		- Choosing a difficulty at the start of the game??? (should we do that)
 	- Replayability - when going back to a level, will everything be restarted, or will switches be deactivated,
