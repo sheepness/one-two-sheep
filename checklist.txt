@@ -65,6 +65,8 @@ Level design/Ideas to be tested (high priority): - maybe use branches for certai
 	- Proper jumping physics
 	- Platforming mechanics (eg dashing, sliding, ducking, crawling, climbing, flying, wall-jumping, ledges)
 Game design (very high priority):
+	- SOMEONE FORMAT THIS UGLY LOOKING ASS CHECKLIST ON GOOGLE DOCS OR NOTEPAD++ OR SOMETHING and maybe transfer it to a different cloud thing like dropbox for
+	  easier access
 	- Consider the intended audience
 	- Theme (VERY IMPORTANT!!!)
 	- Story
