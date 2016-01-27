@@ -26,6 +26,14 @@
           <argument>
             <kind>1</kind>
             <string>hp = 10;
+startX = x;
+startY = y;
+floating = false;
+floatSpeed = 3;
+following = false;
+followRange = 128;
+followSpeed = 1;
+displaced = false;
 </string>
           </argument>
         </arguments>
@@ -50,6 +58,95 @@
             <kind>1</kind>
             <string>if (random(1)&lt;0.33)
 instance_create(x+sprite_width*0.5-32/2, y+sprite_height-32, objHeal);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (floating) {
+if (following) {
+if (instance_exists(objPlayer)) {
+    if (point_distance(startX+sprite_width*0.5, startY+sprite_height*0.5, objPlayer.x, objPlayer.y)&lt;followRange) {
+        displaced = true;
+        direction = point_direction(x+sprite_width*0.5, y+sprite_height*0.5, objPlayer.x, objPlayer.y);
+        speed = followSpeed;
+    } else {
+        if (displaced) {
+        direction = point_direction(x+sprite_width*0.5, y+sprite_height*0.5, startX+sprite_width*0.5, startY+sprite_height*0.5);
+        speed = followSpeed;
+        if (point_distance(x, y, startX, startY)&lt;followSpeed) {
+            displaced = false;
+            x = startX;
+            y = startY;
+            speed = 0;
+        }
+        }
+    }
+} else {
+        if (displaced) {
+        direction = point_direction(x+sprite_width*0.5, y+sprite_height*0.5, startX+sprite_width*0.5, startY+sprite_height*0.5);
+        speed = followSpeed;
+        if (point_distance(x, y, startX, startY)&lt;followSpeed) {
+            displaced = false;
+            x = startX;
+            y = startY;
+            speed = 0;
+        }
+        }
+    }}
+if (displaced) {
+    gravity = 0;
+} else {
+gravity = 0.01*(startY-y);
+if (gravity == 0 &amp;&amp; vspeed == 0)
+    vspeed = floatSpeed;
+}
+} else {
+if (following) {
+if (instance_exists(objPlayer)) {
+    if (point_distance(startX+sprite_width*0.5, startY+sprite_height*0.5, objPlayer.x, objPlayer.y)&lt;followRange) {
+        displaced = true;
+        if (objPlayer.x&gt;x)
+            hspeed = followSpeed;
+        else 
+            hspeed = -followSpeed;
+    } else {
+        if (displaced) {
+        if (startX&gt;x)
+            hspeed = followSpeed;
+        else
+            hspeed = -followSpeed;
+        if (point_distance(x, y, startX, startY)&lt;followSpeed) {
+            displaced = false;
+            x = startX;
+            y = startY;
+            hspeed = 0;
+        }
+        }
+    }
+}
+}
+}
+if (!place_free(x+hspeed, y)) {
+    hspeed = -hspeed;
+}
 </string>
           </argument>
         </arguments>
