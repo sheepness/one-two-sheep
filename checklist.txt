@@ -1,7 +1,21 @@
 Spriting:
 	- Player sprites
 	- Enemy sprites
+		- Standing enemies
+		- Walking enemies
+		- Jumping enemies
+		- Shooting enemies
+		- Floating enemies
+		- Any reasonable combination of those that makes sense to exist as an enemy (eg, a monster who stands still
+		  and shoots projectiles at you, different actions for the same enemy can be made as separate sprites)
 	- Tile sprites (MUST be done in Backgrounds folder)
+	- Bullet sprites
+	- Background (1024x768, repeating horizontally)
+	- Platforming sprites:
+		- Ladder
+		- Switch
+		- Lock
+		- Door
 Sounds:
 	- Platforming sound effects
 	- Level music
