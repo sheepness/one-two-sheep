@@ -41,10 +41,10 @@
       <sprite>sprites\sprPlayerRunning</sprite>
       <sprite>sprites\sprPlayerSliding</sprite>
       <sprite>sprites\sprBow</sprite>
-      <sprite>sprites\sprBullet</sprite>
       <sprite>sprites\sprBlood</sprite>
       <sprite>sprites\sprGameOver</sprite>
     </sprites>
+    <sprite>sprites\sprBullet</sprite>
     <sprites name="blocks">
       <sprite>sprites\sprBlockMask</sprite>
       <sprite>sprites\sprMiniBlock</sprite>
