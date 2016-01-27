@@ -1,4 +1,4 @@
-Spriting:
+Spriting (high priority): - Sprites that are made and pushed to the repository should probably be reported on in the discord channel
 	- Player sprites
 	- Enemy sprites
 		- Standing enemies
@@ -9,34 +9,88 @@ Spriting:
 		- Any reasonable combination of those that makes sense to exist as an enemy (eg, a monster who stands still
 		  and shoots projectiles at you, different actions for the same enemy can be made as separate sprites)
 	- Tile sprites (MUST be done in Backgrounds folder)
+		- Sprites done for planned out environments
 	- Bullet sprites
-	- Background (1024x768, repeating horizontally)
+	- Particle/explosion sprites
+	- Prop sprites
+	- NPC sprites
+	- Background (start with 1024x768, repeating horizontally)
+		- Potentially, we could have the whole background made for each room, so the background sizes will vary as
+		  long as they can fit the screen.
 	- Platforming sprites:
 		- Ladder
 		- Switch
 		- Lock
 		- Door
-Sounds:
+	- Animation of certain sprites (will be followed up on after done)
+Sounds (low priority): - also should be reported on discord channel
 	- Platforming sound effects
-	- Level music
+	- Level music (there's going to be potentially a lot for this)
 	- Game over music
-Level design:
+	- Enemy sound effects
+	- Shooting sound effects
+	- Explosion sound effects
+	- Title music
+	- Pause screen music
+	- Dialogue sound effects
+	- Natural sound effects (eg lightning in background)
+	- General sound effects (eg pressing a button in pause menu)
+Level design/Ideas to be tested (high priority): - maybe use branches for certain mechanics
 	- Inventory
 		- Weapons
-	- Proper level structure
+		- Equipment
+		- Consumables
+		- Quest items
+	- Quests
 	- Enemies
+		- Unique attacks
+	- Teleporters
+	- Chests
+	- Keys, locks
+	- Switches, doors
+	- Level select OR main area (depends on style/theme of game)
 	- Combat system
+		- Different attacks (eg holding shoot shoots bigger, more powerful bullets)
+		- Shoot with mouse??? (yeah probably a good idea aye FailFish)
 	- Powerups
-	- Experience
+	- Coins/currency
+	- Upgrades
+	- Experience/level system
+	- Attributes (attack, defence, agility, dexterity, health, etc.)
 	- Save system
 	- NPCs
 	- Dialogue
 	- Cutscenes
-	- 
-	- Platforming features (ie ladders, boxes)
+	- Platforming features (ie ladders, boxes, swinging vines)
 	- Proper jumping physics
-Game design:
-	- Theme
+	- Platforming mechanics (eg dashing, sliding, ducking, crawling, climbing, flying, wall-jumping, ledges)
+Game design (very high priority):
+	- Consider the intended audience
+	- Theme (VERY IMPORTANT!!!)
 	- Story
-	- Setting
+	- Setting (planning the visual design)
 	- Related game sprites
+	- Style (eg open-world, etc.)
+		- Decide on the balance on the sub-genres (kinda)
+	- Map design/planning of arrangement of levels
+		- Consider the intended time length of every area and how slow progress should be made
+		- Plan out any backtracking (eg need to collect an important item to unlock an ability, then go back)
+		- Sidequests/bonus rooms
+		- Important to mark out 'safe areas'
+	- Art type (eg minimal, 8-bit, etc.)
+	- Sound type
+	- Type of gameplay (combat or platforming oriented, or something else?)
+		- Puzzles?????
+		- Exploration?????
+		- "you gotta get all 5 of these things before you can get past, m8"
+	- Plan of intended route throughout game (not required if linear gameplay)
+	- Level structure (ie planning what levels will look like, eg going upwards or rightwards in a certain level)
+	- Difficulty curve (pretty darn important)
+		- Choosing a difficulty at the start of the game??? (should we do that)
+	- Replayability - when going back to a level, will everything be restarted, or will switches be deactivated,
+	  enemies be revived, etc.
+	- Simplicity - we need to decide on how simple we're going to make this game, or how complex.
+	- Pace - should it be full of action and combat, or slow and steady
+	- Coming up with new ideas, because we need to keep it interesting after a while, or making it engaging through
+	  the story, for example. (this is what im trying to do right now unsurprisingly)
+		- New gameplay mechanics, maybe?
