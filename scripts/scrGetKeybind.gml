@@ -72,6 +72,9 @@ switch(keyIn)
     case 220: return "\";
     case 221: return "]";
     case 222: return "'";
+    case mb_left: return "Left";
+    case mb_middle: return "Middle";
+    case mb_right: return "Right";
     //other characters
     default: return chr(keyIn);
 }

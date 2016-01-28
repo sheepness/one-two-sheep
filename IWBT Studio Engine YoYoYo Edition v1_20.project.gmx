@@ -121,6 +121,8 @@
       <script>scripts\scrGetMusic.gml</script>
       <script>scripts\scrPlayMusic.gml</script>
       <script>scripts\scrStopMusic.gml</script>
+      <script>scripts\scrDrop.gml</script>
+      <script>scripts\scrBulletHit.gml</script>
     </scripts>
     <scripts name="functions">
       <script>scripts\scrMakeShapes.gml</script>
@@ -145,6 +147,7 @@
       <object>objects\objOptionsMenu</object>
       <object>objects\objControlsMenu</object>
       <object>objects\objDifficultyMenu</object>
+      <object>objects\objGameOverlay</object>
     </objects>
     <objects name="player">
       <object>objects\objPlayerStart</object>
@@ -203,10 +206,6 @@
     <objects name="items">
       <object>objects\objSecretItem</object>
       <object>objects\objSecretIndicator</object>
-      <object>objects\objBossItem</object>
-      <object>objects\objBossIndicator</object>
-      <object>objects\objGameClear</object>
-      <object>objects\objHeal</object>
     </objects>
     <objects name="enemies">
       <object>objects\objEnemy</object>
@@ -221,6 +220,14 @@
     <objects name="switches">
       <object>objects\objSwitchLock</object>
       <object>objects\objSwitch</object>
+    </objects>
+    <objects name="drops">
+      <object>objects\objHeal</object>
+      <object>objects\objCoin</object>
+      <object>objects\objNoDropCoin</object>
+      <object>objects\objBreakableBlock</object>
+      <object>objects\objPowerup</object>
+      <object>objects\objDrop</object>
     </objects>
   </objects>
   <rooms name="rooms">

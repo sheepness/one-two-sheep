@@ -25,13 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>hp = 10;
+            <string>hp = 15;
 startX = x;
 startY = y;
 floating = false;
 floatSpeed = 3;
 following = false;
-followRange = 128;
+followRange = 256;
 followSpeed = 1;
 displaced = false;
 </string>
@@ -56,8 +56,7 @@ displaced = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (random(1)&lt;0.33)
-instance_create(x+sprite_width*0.5-32/2, y+sprite_height-32, objHeal);
+            <string>scrDrop(2);
 </string>
           </argument>
         </arguments>
@@ -169,15 +168,7 @@ if (!place_free(x+hspeed, y)) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>damage = irandom(2)+1;
-hp-=damage;
-with (other) {
-    instance_destroy();
-}
-dmgIndicator = instance_create(x+random(sprite_width), y+sprite_height*0.5, objDamageIndicator);
-dmgIndicator.dmg = damage;
-if (hp&lt;=0)
-    instance_destroy();
+            <string>scrBulletHit();
 </string>
           </argument>
         </arguments>

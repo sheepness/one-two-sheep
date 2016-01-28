@@ -12,19 +12,20 @@ global.savePlayerXScale = 1;
 global.grav = 1;
 global.actualGrav = 1.75;
 global.saveGrav = 1;
-global.maxHP = 3;
+global.maxHP = 10;
 global.hp = global.maxHP;
+global.coins = 0;
+global.saveCoins = 0;
+
+global.attackMin = 2;
+global.attackMax = 4;
+global.saveAttackMin = 2;
+global.saveAttackMax = 4;
 
 for (var i = 8; i >= 0; i--)
 {
-    global.secretItem[i] = 0;
-    global.saveSecretItem[i] = 0;
-    global.bossItem[i] = 0;
-    global.saveBossItem[i] = 0;
+    global.item[i] = 0;
 }
-
-global.gameClear = 0;
-global.saveGameClear = 0;
 
 global.md5StrIn = "";
 

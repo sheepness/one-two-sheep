@@ -217,7 +217,7 @@ if (abs(vspeed) &gt; maxVspeed) {vspeed = sign(vspeed)*maxVspeed;} //check if mo
 
 if (!frozen)    //check if frozen before doing anything
 {
-    if(keyboard_check(global.shotbutton)&amp;&amp;shootable) {
+    if(mouse_check_button(global.shotbutton)&amp;&amp;shootable) {
         scrPlayerShoot();
         shootable = false;
         alarm[0] = 10;
@@ -228,6 +228,48 @@ if (!frozen)    //check if frozen before doing anything
         scrPlayerVJump();
     if(keyboard_check_pressed(global.suicidebutton))
         scrKillPlayer();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objDrop">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>switch(other.object_index) {
+    case objCoin:
+        global.coins++;
+        with (other)
+            instance_destroy();
+        break;
+    case objHeal:
+        if (global.hp&lt;global.maxHP)
+            global.hp++;
+        with(other)
+            instance_destroy();
+        break;
+    case objPowerup:
+        global.attackMin++;
+        global.attackMax++;
+        with(other) {instance_destroy();}
+        break;
+    default:
+        break;
 }
 </string>
           </argument>
@@ -255,32 +297,6 @@ if (!frozen)    //check if frozen before doing anything
 global.hp--;
 invincible = true;
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objHeal">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (global.hp&lt;global.maxHP)
-global.hp++;
-with(other)
-instance_destroy();
 </string>
           </argument>
         </arguments>
@@ -439,7 +455,6 @@ if (global.grav == -1)      //need to draw the player a pixel off in the y-axis 
     drawY += 1;
 if (!flashing)
 draw_sprite_ext(sprite_index,image_index,drawX,drawY,image_xscale*global.player_xscale,image_yscale*global.grav,image_angle,image_blend,image_alpha);
-draw_healthbar(view_xview+32,view_yview+32, view_xview+160,view_yview+48, global.hp/0.03, c_black, c_red, c_green, 0, true, true);
 //draw the hitbox
 if (global.showHitbox)
     draw_sprite_ext(mask_index,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha*0.8);

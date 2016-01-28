@@ -65,17 +65,6 @@ for (var i  = 1; i &lt;= 3; i++)
         if (!is_real(difficulty[i]))
             difficulty[i] = 0;
         
-        for (var j = 1; j &lt;= 8; j++)
-        {
-            boss[j,i] = ds_list_find_value(list,16+j);
-            if (!is_real(boss[j,i]))
-                boss[j,i] = 0;
-        }
-        
-        clear[i] = ds_list_find_value(list,25);
-        if (!is_real(clear[i]))
-            clear[i] = 0;
-        
         ds_list_destroy(list);
     }
     else
@@ -265,17 +254,6 @@ else
         }
         
         draw_set_font(fDefault24);
-        
-        if(clear[i]==1){draw_text(x+(i-1)*239+63,y+215,"Clear!!")}
-        
-        if(boss[1,i]==1){draw_sprite(sprBossItem,-1,x+(i-1)*239+0,y+128)}
-        if(boss[2,i]==1){draw_sprite(sprBossItem,-1,x+(i-1)*239+32,y+128)}
-        if(boss[3,i]==1){draw_sprite(sprBossItem,-1,x+(i-1)*239+64,y+128)}
-        if(boss[4,i]==1){draw_sprite(sprBossItem,-1,x+(i-1)*239+96,y+128)}
-        if(boss[5,i]==1){draw_sprite(sprBossItem,-1,x+(i-1)*239+0,y+160)}
-        if(boss[6,i]==1){draw_sprite(sprBossItem,-1,x+(i-1)*239+32,y+160)}
-        if(boss[7,i]==1){draw_sprite(sprBossItem,-1,x+(i-1)*239+64,y+160)}
-        if(boss[8,i]==1){draw_sprite(sprBossItem,-1,x+(i-1)*239+96,y+160)}
     }
     else
     {

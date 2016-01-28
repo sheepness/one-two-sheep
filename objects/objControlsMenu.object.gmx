@@ -133,15 +133,15 @@ if (!settingKey)
         else
         {
             //default controls
-            global.leftbutton = vk_left;
-            global.rightbutton = vk_right;
-            global.upbutton = vk_up;
-            global.downbutton = vk_down;
-            global.jumpbutton = vk_shift;
-            global.shotbutton = ord("Z");
+            global.leftbutton = ord("A");
+            global.rightbutton = ord("D");
+            global.upbutton = ord("W");
+            global.downbutton = ord("S");
+            global.jumpbutton = vk_space;
+            global.shotbutton = mb_left;
             global.restartbutton = ord("R");
-            global.skipbutton = ord("S");
-            global.suicidebutton = ord("Q");
+            global.skipbutton = ord("F");
+            global.suicidebutton = ord("L");
             global.pausebutton = ord("P");
             
             resetPrompt = true;
@@ -165,19 +165,24 @@ else
         
         if (keyChange == 160 || keyChange == 161)   //check if current key pressed is either shift key
             keyChange = 16; //set it to work for both shift keys
-        
+        settingKey = false;
         if (select == 1) {global.leftbutton = keyChange;}
         else if (select == 2) {global.rightbutton = keyChange;}
         else if (select == 3) {global.upbutton = keyChange;}
         else if (select == 4) {global.downbutton = keyChange;}
         else if (select == 5) {global.jumpbutton = keyChange;}
-        else if (select == 6) {global.shotbutton = keyChange;}
         else if (select == 7) {global.restartbutton = keyChange;}
         else if (select == 8) {global.skipbutton = keyChange;}
         else if (select == 9) {global.suicidebutton = keyChange;}
         else if (select == 10) {global.pausebutton = keyChange;}
+        else {settingKey = true;}
         
-        settingKey = false;
+    }
+    if (mouse_check_button_pressed(mb_any)) {
+    var keyChange = mouse_button;
+    settingKey = false;
+        if (select==6) {global.shotbutton = keyChange;}
+        else {settingKey = true;}
     }
 }
 

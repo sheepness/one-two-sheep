@@ -14,18 +14,16 @@ scrSetFullscreen();
 global.smoothingMode = ini_read_real("Settings","Smoothing_mode",false);
 
 //controls
-global.leftbutton = ini_read_real("Controls","Left",vk_left);
-global.rightbutton = ini_read_real("Controls","Right",vk_right);
-global.upbutton = ini_read_real("Controls","Up",vk_up);
-global.downbutton = ini_read_real("Controls","Down",vk_down);
-global.jumpbutton = ini_read_real("Controls","Jump",vk_shift);
-global.shotbutton = ini_read_real("Controls","Shoot",ord("Z"));
+global.leftbutton = ini_read_real("Controls","Left",ord("A"));
+global.rightbutton = ini_read_real("Controls","Right",ord("D"));
+global.upbutton = ini_read_real("Controls","Up",ord("W"));
+global.downbutton = ini_read_real("Controls","Down",ord("S"));
+global.jumpbutton = ini_read_real("Controls","Jump",vk_space);
+global.shotbutton = ini_read_real("Controls","Shoot",mb_left);
 global.restartbutton = ini_read_real("Controls","Restart",ord("R"));
-global.skipbutton = ini_read_real("Controls","Skip",ord("S"));
-global.suicidebutton = ini_read_real("Controls","Suicide",ord("Q"));
+global.skipbutton = ini_read_real("Controls","Skip",ord("Q"));
+global.suicidebutton = ini_read_real("Controls","Suicide",ord("L"));
 global.pausebutton = ini_read_real("Controls","Pause",ord("P"));
-global.aAlignButton = ini_read_real("Controls","Align_left",ord("A"));
-global.dAlignButton = ini_read_real("Controls","Align_right",ord("D"));
 
 ini_close();
 

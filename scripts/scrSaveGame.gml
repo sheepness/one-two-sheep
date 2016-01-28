@@ -12,6 +12,9 @@ if (savePosition)
     global.savePlayerY = objPlayer.y;
     global.savePlayerXScale = global.player_xscale;
     global.saveGrav = global.grav;
+    global.saveCoins = global.coins;
+    global.saveAttackMin = global.attackMin;
+    global.saveAttackMax = global.attackMax;
     
     //check if player is saving inside of a wall or in the ceiling when the player's position is floored
     with (objPlayer)
@@ -36,14 +39,6 @@ if (savePosition)
     //floor player position to match standard engine behavior
     global.savePlayerX = floor(global.savePlayerX);
     global.savePlayerY = floor(global.savePlayerY);
-    
-    for (var i = 1; i <= 8; i++)
-    {
-        global.saveSecretItem[i] = global.secretItem[i];
-        global.saveBossItem[i] = global.bossItem[i];
-    }
-    
-    global.saveGameClear = global.gameClear;
 }
 
 //create a list for save data
@@ -59,18 +54,9 @@ ds_list_add(list,global.savePlayerX);
 ds_list_add(list,global.savePlayerY);
 ds_list_add(list,global.savePlayerXScale);
 ds_list_add(list,global.saveGrav);
-
-for (var i = 1; i <= 8; i++)
-{
-    ds_list_add(list,global.saveSecretItem[i]);
-}
-
-for (var i = 1; i <= 8; i++)
-{
-    ds_list_add(list,global.saveBossItem[i]);
-}
-
-ds_list_add(list,global.saveGameClear);
+ds_list_add(list,global.saveCoins);
+ds_list_add(list,global.saveAttackMin);
+ds_list_add(list,global.saveAttackMax);
 
 //add md5 hash to the end to verify saves and make them harder to hack
 ds_list_add(list,md5_string_unicode(ds_list_write(list)+global.md5StrAdd));

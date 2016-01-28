@@ -50,7 +50,7 @@ firing = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[0] = 200;
+            <string>alarm[0] = 75;
 </string>
           </argument>
         </arguments>

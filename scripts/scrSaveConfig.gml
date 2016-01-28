@@ -19,7 +19,5 @@ ini_write_real("Controls","Restart",global.restartbutton);
 ini_write_real("Controls","Skip",global.skipbutton);
 ini_write_real("Controls","Suicide",global.suicidebutton);
 ini_write_real("Controls","Pause",global.pausebutton);
-ini_write_real("Controls","Align_left",global.aAlignButton);
-ini_write_real("Controls","Align_right",global.dAlignButton);
 
 ini_close();
