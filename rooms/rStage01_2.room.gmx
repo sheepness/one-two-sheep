@@ -137,6 +137,17 @@
     <instance objName="objSpinningShootingEnemy" x="512" y="256" name="inst_FD50C9D1" locked="0" code="floating = true;&#xA;following = true;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="672" y="96" name="inst_D67B0467" locked="0" code="" scaleX="3" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objSign" x="704" y="64" name="inst_67C2C01F" locked="0" code="signText = &quot;haha you win i guess&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objNoDropCoin" x="64" y="416" name="inst_A08F73FC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objNoDropCoin" x="128" y="416" name="inst_585DDDE0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objNoDropCoin" x="192" y="416" name="inst_1CF67428" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objNoDropCoin" x="256" y="416" name="inst_7B728A4B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objNoDropCoin" x="320" y="416" name="inst_02E02857" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objNoDropCoin" x="1536" y="32" name="inst_5021E4AE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objNoDropCoin" x="1568" y="32" name="inst_FBD78057" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objNoDropCoin" x="1600" y="32" name="inst_3F58D3E1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objNoDropCoin" x="1600" y="0" name="inst_B055DF17" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objNoDropCoin" x="1568" y="0" name="inst_4C884F06" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objNoDropCoin" x="1536" y="0" name="inst_99D79C35" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bAllTiles" x="32" y="576" w="32" h="32" xo="32" yo="96" id="10002288" name="inst_78A71CD0" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

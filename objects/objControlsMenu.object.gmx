@@ -34,17 +34,18 @@ ySeperation = 40;
 settingKey = false;     //sets whether or not a key is getting set
 resetPrompt = false;    //shows the message that controls were reset
 
-strSelect[1] = "Left Button";
-strSelect[2] = "Right Button";
-strSelect[3] = "Up Button";
-strSelect[4] = "Down Button";
-strSelect[5] = "Jump Button";
-strSelect[6] = "Shoot Button";
-strSelect[7] = "Restart Button";
-strSelect[8] = "Skip Button";
-strSelect[9] = "Suicide Button";
-strSelect[10] = "Pause Button";
-strSelect[11] = "Reset Controls";
+strSelect[1] = "Left";
+strSelect[2] = "Right";
+strSelect[3] = "Up";
+strSelect[4] = "Down";
+strSelect[5] = "Jump";
+strSelect[6] = "Primary Shoot";
+strSelect[7] = "Restart";
+strSelect[8] = "Skip";
+strSelect[9] = "Suicide";
+strSelect[10] = "Pause";
+strSelect[11] = "Secondary Shoot";
+strSelect[12] = "Reset";
 
 //get current controls
 strKey[1] = scrGetKeybind(global.leftbutton);
@@ -57,7 +58,8 @@ strKey[7] = scrGetKeybind(global.restartbutton);
 strKey[8] = scrGetKeybind(global.skipbutton);
 strKey[9] = scrGetKeybind(global.suicidebutton);
 strKey[10] = scrGetKeybind(global.pausebutton);
-strKey[11] = "";
+strKey[11] = scrGetKeybind(global.shotbutton2);
+strKey[12] = "";
 
 playerIndex = 0;
 </string>
@@ -115,18 +117,18 @@ if (!settingKey)
         audio_play_sound(global.menuSound,0,0);
         select -= 1;
         if(select &lt; 1)
-            select = 11;
+            select = 12;
     }
     else if (keyboard_check_pressed(vk_down))   //global.downbutton
     {
         audio_play_sound(global.menuSound,0,0);
         select += 1;
-        if(select &gt; 11)
+        if(select &gt; 12)
             select = 1;
     }
     else if (keyboard_check_pressed(vk_shift)) //global.jumpbutton
     {
-        if (select != 11)
+        if (select != 12)
         {
             settingKey = true;
         }
@@ -143,6 +145,7 @@ if (!settingKey)
             global.skipbutton = ord("F");
             global.suicidebutton = ord("L");
             global.pausebutton = ord("P");
+            global.shotbutton2 = mb_right;
             
             resetPrompt = true;
             alarm[0] = 60;
@@ -163,9 +166,19 @@ else
         
         keyChange = keyboard_key;
         
+        var alreadySetKey = false;
+        
         if (keyChange == 160 || keyChange == 161)   //check if current key pressed is either shift key
             keyChange = 16; //set it to work for both shift keys
+        for (var i=1; i&lt;12; i++) {
+        if (scrGetKeybind(keyChange)==strKey[i]) {
+            if (select!=i) {
+                alreadySetKey = true;
+            }
+        }
+        }
         settingKey = false;
+        if (!alreadySetKey) {
         if (select == 1) {global.leftbutton = keyChange;}
         else if (select == 2) {global.rightbutton = keyChange;}
         else if (select == 3) {global.upbutton = keyChange;}
@@ -176,13 +189,29 @@ else
         else if (select == 9) {global.suicidebutton = keyChange;}
         else if (select == 10) {global.pausebutton = keyChange;}
         else {settingKey = true;}
+        } else {
+            settingKey = true;
+        }
         
     }
     if (mouse_check_button_pressed(mb_any)) {
     var keyChange = mouse_button;
+    var alreadySetKey = false;
+        for (var i=1; i&lt;12; i++) {
+        if (scrGetKeybind(keyChange)==strKey[i]) {
+            if (select!=i) {
+                alreadySetKey = true;
+            }
+        }
+        }
     settingKey = false;
+    if (!alreadySetKey) {
         if (select==6) {global.shotbutton = keyChange;}
+        else if (select==11) {global.shotbutton2 = keyChange;}
         else {settingKey = true;}
+        } else {
+            settingKey = true;
+        }
     }
 }
 
@@ -197,7 +226,8 @@ strKey[7] = scrGetKeybind(global.restartbutton);
 strKey[8] = scrGetKeybind(global.skipbutton);
 strKey[9] = scrGetKeybind(global.suicidebutton);
 strKey[10] = scrGetKeybind(global.pausebutton);
-strKey[11] = "";
+strKey[11] = scrGetKeybind(global.shotbutton2);
+strKey[12] = "";
 </string>
           </argument>
         </arguments>
@@ -223,7 +253,7 @@ strKey[11] = "";
             <string>draw_set_color(c_black);
 draw_set_font(fDefault24);
 
-for(var i = 1; i &lt;= 11; i += 1)
+for(var i = 1; i &lt;= 12; i += 1)
 {
     draw_set_halign(fa_left);
     draw_text(xSelector,ySelector+(i-1)*ySeperation+32,strSelect[i]);
@@ -245,7 +275,7 @@ for(var i = 1; i &lt;= 11; i += 1)
         draw_text(xSelector+xSeperation,ySelector+(i-1)*ySeperation+32,strKey[i]);
     }
     
-    if (resetPrompt &amp;&amp; i == 11) //reset controls prompt
+    if (resetPrompt &amp;&amp; i == 12) //reset controls prompt
     {
         draw_text(xSelector+xSeperation,ySelector+(i-1)*ySeperation+32,"Controls reset!");
     }

@@ -100,6 +100,7 @@
       <script>scripts\scrPlayerJump.gml</script>
       <script>scripts\scrPlayerVJump.gml</script>
       <script>scripts\scrPlayerShoot.gml</script>
+      <script>scripts\scrPlayerSecondaryShoot.gml</script>
       <script>scripts\scrSetPlayerMask.gml</script>
       <script>scripts\scrKillPlayer.gml</script>
       <script>scripts\scrFlipGrav.gml</script>
