@@ -26,10 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>select = 1;
-xSelector = 124;
-ySelector = 164;
-xSeperation = 550;
-ySeperation = 48;
+xSelector = 158;
+ySelector = 207;
+xSeperation = 704;
+ySeperation = 60;
 
 strSelect[0] = "Music";
 strSelect[1] = "Volume Level";
@@ -182,9 +182,9 @@ draw_sprite(sprPlayerIdle,playerIndex,xSelector-16,ySelector+(ySeperation*select
 //button info
 draw_set_font(fDefault12);
 draw_set_halign(fa_left);
-draw_text(34,556,"[Z] Back");
+draw_text(34,716,"[Z] Back");
 draw_set_halign(fa_right);
-draw_text(766,556,"[Shift] Accept");
+draw_text(990,716,"[Shift] Accept");
 </string>
           </argument>
         </arguments>

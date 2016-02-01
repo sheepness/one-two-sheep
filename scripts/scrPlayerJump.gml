@@ -1,7 +1,8 @@
-if (place_meeting(x,y+(global.grav),objBlock) || onPlatform || place_meeting(x,y+(global.grav),objWater))
+if (place_meeting(x,y+(global.grav),objBlock) || onLadder || standingOnLadder || onPlatform || place_meeting(x,y+(global.grav),objWater))
 {
     vspeed = -jump;
     djump = 1;
+    onLadder = false;
     audio_play_sound(sndJump,0,0);
 }
 else if (djump == true || place_meeting(x,y+(global.grav),objWater2) || global.infJump)

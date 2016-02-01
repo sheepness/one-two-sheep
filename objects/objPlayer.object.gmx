@@ -37,12 +37,14 @@ maxSpeed = 3;   //max horizontal speed
 maxVspeed = 9;  //max vertical speed
 image_speed = 0.2; //initial speed of animation
 onPlatform = 0; //sets if player is currently standing on a platform
+onLadder = 0;
+standingOnLadder = 0;
 
 shootable = true;
 shootable2 = true;
 
 invincible = false;
-invincibleTimer = 100;
+invincibleTimer = 200;
 flashTimer = 5;
 flashing = false;
 
@@ -82,6 +84,29 @@ if (global.autosave) //save the game if currently set to autosave
 
 with (objBow)
     instance_destroy();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>frozen = false;
 </string>
           </argument>
         </arguments>
@@ -232,7 +257,16 @@ if (!onPlatform)    //check if standing on a platform
 }
 else
 {
-    if (!place_meeting(x,y+(4*global.grav),objPlatform)) {onPlatform = 0;}
+    if (!place_meeting(x,y+(4*global.grav),objPlatform)) {onPlatform = 0}
+}
+if (!standingOnLadder)    //check if standing on a ladder
+{
+    if((vspeed * global.grav) &lt; -0.05) {sprite_index = sprPlayerJump;}
+    else if((vspeed * global.grav) &gt; 0.05) {sprite_index = sprPlayerFall;}
+}
+else
+{
+    if (!place_meeting(x,y+(4*global.grav),objLadder)) {standingOnLadder = 0}
 }
 
 var slideBlockTouching = instance_place(x,y+(global.grav),objSlideBlock);   //check if on a slide block
@@ -250,13 +284,95 @@ if (!frozen)    //check if frozen before doing anything
             shootable2 = false;
             alarm[1] = 25;
         }
-    if(keyboard_check_pressed(global.jumpbutton))
+    if(keyboard_check_pressed(global.jumpbutton)) {
         scrPlayerJump();
+        event_user(0);
+        }
     if(keyboard_check_released(global.jumpbutton))
         scrPlayerVJump();
     if(keyboard_check_pressed(global.suicidebutton))
         scrKillPlayer();
 }
+if (!place_meeting(x, y, objLadder)) {
+    onLadder = false;
+}
+if (!onPlatform &amp;&amp;!onLadder&amp;&amp;!standingOnLadder) {
+    event_user(0);
+}
+if (!frozen&amp;&amp;standingOnLadder) {
+if (keyboard_check(global.downbutton)) {
+    gravity = 0;
+    onLadder = true;
+    vspeed = 3;
+}
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objLadder">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (!frozen) {
+if (keyboard_check(global.upbutton)) {
+    gravity = 0;
+    onLadder = true;
+    vspeed = -3;
+} else if (keyboard_check(global.downbutton)) {
+    gravity = 0;
+    onLadder = true;
+    vspeed = 3;
+} else {
+    if (onLadder) {
+        vspeed = 0;
+    }
+}
+}
+if (onLadder) {
+if (vspeed&lt;0) {
+if (place_free(x, y+vspeed)&amp;&amp;!place_meeting(x, y+vspeed, objLadder)) {
+    y = other.y-(sprite_get_height(sprPlayerIdle)-sprite_get_yoffset(sprPlayerIdle));
+    onLadder = false;
+    standingOnLadder = true;
+    gravity = 0;
+    vspeed = 0;
+}
+} else if (vspeed&gt;0) {
+    if (!place_free(x, y+vspeed)) {
+        move_contact_solid(270,abs(vspeed))
+        onLadder = false;
+        event_user(0);
+        vspeed = 0;
+    }
+}
+} else
+if (y+(sprite_get_height(sprPlayerIdle)-sprite_get_yoffset(sprPlayerIdle))-vspeed &lt;= other.y+1)
+    {
+        if (other.vspeed &gt;= 0)
+        {
+            y = other.y-(sprite_get_height(sprPlayerIdle)-sprite_get_yoffset(sprPlayerIdle));
+            vspeed = other.vspeed;
+        }
+        djump = true;
+        standingOnLadder = true;
+        //event_user(0);
+        gravity = 0;
+    }
 </string>
           </argument>
         </arguments>
@@ -325,6 +441,16 @@ if (!frozen)    //check if frozen before doing anything
             <string>if (!invincible){
 global.hp--;
 invincible = true;
+frozen = true;
+alarm[2] = 25;
+vspeed = lengthdir_y(8, point_direction(other.x+other.sprite_width/2, other.y+other.sprite_height/2, x, y));
+if (x&gt;other.x+other.sprite_width/2)
+    hspeed = 6;
+else
+    hspeed = -6;
+}
+if (vspeed&gt;maxVspeed) {
+vspeed = maxVspeed;
 }
 </string>
           </argument>
@@ -348,34 +474,19 @@ invincible = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.grav == 1)   //normal
-{
-    if (y-vspeed/2 &lt;= other.y)
+            <string>    if (y-vspeed/2 &lt;= other.y)
     {
         if (other.vspeed &gt;= 0)
         {
-            y = other.y-9;
+            y = other.y-(sprite_get_height(sprPlayerIdle)-sprite_get_yoffset(sprPlayerIdle));
             vspeed = other.vspeed;
+            gravity = 0;
+            //event_user(0);
         }
         
         onPlatform = 1;
         djump = true;
     }
-}
-else    //flipped
-{
-    if (y-vspeed/2 &gt;= other.y+other.sprite_height-1)
-    {
-        if (other.yspeed &lt;= 0)
-        {
-            y = other.y+other.sprite_height+8;
-            vspeed = other.yspeed;
-        }
-        
-        onPlatform = 1;
-        djump = true;
-    }
-}
 </string>
           </argument>
         </arguments>
@@ -405,11 +516,6 @@ else    //flipped
         if(hspeed &lt;= 0){move_contact_solid(180,abs(hspeed));}
         if(hspeed &gt; 0){move_contact_solid(0,abs(hspeed));}
     }
-    else    //flipped
-    {
-        if(hspeed &lt; 0){move_contact_solid(180,abs(hspeed));}
-        if(hspeed &gt;= 0){move_contact_solid(0,abs(hspeed));}
-    }
     hspeed = 0;
 }
  
@@ -420,15 +526,33 @@ else    //flipped
         if(vspeed &lt;= 0){move_contact_solid(90,abs(vspeed));}
         if(vspeed &gt; 0){move_contact_solid(270,abs(vspeed));djump=1;}
     }
-    else    //flipped
-    {
-        if(vspeed &lt;= 0){move_contact_solid(90,abs(vspeed));djump=1;}
-        if(vspeed &gt; 0){move_contact_solid(270,abs(vspeed));}
-    }
     vspeed = 0;
 }
 
 if (!place_free(x+hspeed,y+vspeed)) {hspeed = 0;}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>gravity = 0.4 * global.grav*global.actualGrav; //reset gravity
 </string>
           </argument>
         </arguments>

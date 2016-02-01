@@ -22,6 +22,9 @@ global.attackMax = 4;
 global.saveAttackMin = 2;
 global.saveAttackMax = 4;
 
+global.transition = false;
+global.roomChange = false;
+
 for (var i = 8; i >= 0; i--)
 {
     global.item[i] = 0;
@@ -50,9 +53,21 @@ global.gameOverMusic = -1;   //keeps track of game over music instance
 global.musicFading = 0;     //keeps track of whether the music is being currently faded out
 global.currentGain = 0;     //keeps track of current track gain when a song is being faded out
 
+var base_w = view_wview[0];
+var base_h = view_hview[0];
+var aspect = base_w/base_h;
+var windowAspect = window_get_width()/window_get_height(); // get the GAME aspect ratio
+if (windowAspect>aspect) {
+    var hh = min(window_get_height(), base_h);
+    var ww = hh*aspect;
+} else {
+    var ww = min(window_get_width(), base_w);
+    var hh = ww / aspect;
+}
+window_set_size(ww, hh);
 //get the default window size
-global.windowWidth = view_wview[0];
-global.windowHeight = view_hview[0];
+global.windowWidth = ww;
+global.windowHeight = hh;
 
 display_set_gui_size(view_wview[0],view_hview[0]);  //set the correct gui size for the Draw GUI event
 
