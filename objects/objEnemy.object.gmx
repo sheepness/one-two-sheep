@@ -33,7 +33,7 @@ floating = false;
 floatSpeed = 3;
 following = false;
 followRange = 256;
-followSpeed = 1;
+followSpeed = 3.5;
 displaced = false;
 </string>
           </argument>
@@ -145,6 +145,8 @@ if (instance_exists(objPlayer)) {
 }
 }
 if (!place_free(x+hspeed, y)) {
+if(hspeed &lt;= 0){move_contact_solid(180,abs(hspeed));}
+        if(hspeed &gt; 0){move_contact_solid(0,abs(hspeed));}
     hspeed = -hspeed;
 }
 if (place_meeting(x+hspeed, y, objBounceBlock)) {

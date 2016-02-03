@@ -136,6 +136,7 @@
       <script>scripts\scrStopMusic.gml</script>
       <script>scripts\scrDrop.gml</script>
       <script>scripts\scrBulletHit.gml</script>
+      <script>scripts\scrResetTriggers.gml</script>
     </scripts>
     <scripts name="functions">
       <script>scripts\scrMakeShapes.gml</script>
@@ -225,14 +226,19 @@
     </objects>
     <objects name="enemies">
       <object>objects\objEnemy</object>
+      <object>objects\objDashingEnemy</object>
       <object>objects\objAimedShootingEnemy</object>
       <object>objects\objSpinningShootingEnemy</object>
       <object>objects\objShootingEnemy</object>
       <object>objects\objEnemyBullet</object>
       <object>objects\objPlayerKiller</object>
       <object>objects\objDamageIndicator</object>
+      <object>objects\objRedDamageIndicator</object>
       <object>objects\objExplodingShootingEnemy</object>
-      <object>objects\objStationaryKiller</object>
+      <object>objects\objStationaryKillerUp</object>
+      <object>objects\objStationaryKillerRight</object>
+      <object>objects\objStationaryKillerLeft</object>
+      <object>objects\objStationaryKillerDown</object>
       <object>objects\objLinearMovingKiller</object>
       <object>objects\objSpinningKiller</object>
     </objects>
@@ -261,8 +267,9 @@
       <room>rooms\rDifficultySelect</room>
     </rooms>
     <rooms name="sample">
-      <room>rooms\rStage01_2</room>
+      <room>rooms\rStageEnemyTest</room>
       <room>rooms\rStage01_1</room>
+      <room>rooms\rStage01_2</room>
     </rooms>
     <room>rooms\rTemplate</room>
   </rooms>

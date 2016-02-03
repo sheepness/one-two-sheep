@@ -28,12 +28,12 @@
             <string>anglesweep = 0;
 frozen = 0; //sets if player can move or not
 
-jump = 14 * global.grav; //set how fast the player jumps
-jump2 = 8 * global.grav; //sets how fast the player double jumps
+jump = 17 * global.grav; //set how fast the player jumps
+jump2 = 14 * global.grav; //sets how fast the player double jumps
 gravity = 0.4 * global.grav*global.actualGrav; //player gravity
 
 djump = global.player_djump; //allow the player to double jump as soon as he spawns
-maxSpeed = 3;   //max horizontal speed
+maxSpeed = 5;   //max horizontal speed
 maxVspeed = 9;  //max vertical speed
 image_speed = 0.2; //initial speed of animation
 onPlatform = 0; //sets if player is currently standing on a platform
@@ -44,7 +44,7 @@ shootable = true;
 shootable2 = true;
 
 invincible = false;
-invincibleTimer = 200;
+invincibleTimer = 100;
 flashTimer = 5;
 flashing = false;
 
@@ -203,7 +203,7 @@ if (invincible) {
     }
     if (invincibleTimer &lt;=0) {
         invincible = false;
-        invincibleTimer = 40;
+        invincibleTimer = 100;
         flashing = 0;
     }
 }
@@ -259,6 +259,8 @@ else
 {
     if (!place_meeting(x,y+(4*global.grav),objPlatform)) {onPlatform = 0}
 }
+if (place_meeting(x, y+(sprite_get_height(sprPlayerIdle)-sprite_get_yoffset(sprPlayerIdle))+1, objLadder))
+        standingOnLadder = true;
 if (!standingOnLadder)    //check if standing on a ladder
 {
     if((vspeed * global.grav) &lt; -0.05) {sprite_index = sprPlayerJump;}
@@ -439,7 +441,9 @@ if (y+(sprite_get_height(sprPlayerIdle)-sprite_get_yoffset(sprPlayerIdle))-vspee
           <argument>
             <kind>1</kind>
             <string>if (!invincible){
-global.hp--;
+global.hp-=other.dmg;
+dmgIndicator = instance_create(x-sprite_get_xoffset(sprite_index)+random(sprite_width), y-sprite_get_yoffset(sprite_index)+sprite_height*0.5, objRedDamageIndicator);
+dmgIndicator.dmg = other.dmg;
 invincible = true;
 frozen = true;
 alarm[2] = 25;
@@ -474,7 +478,7 @@ vspeed = maxVspeed;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>    if (y-vspeed/2 &lt;= other.y)
+            <string>    if (y-vspeed/2 &lt;= other.y&amp;&amp;!onLadder)
     {
         if (other.vspeed &gt;= 0)
         {
@@ -483,10 +487,16 @@ vspeed = maxVspeed;
             gravity = 0;
             //event_user(0);
         }
-        
         onPlatform = 1;
         djump = true;
     }
+    if (!frozen&amp;&amp;standingOnLadder) {
+if (keyboard_check(global.downbutton)) {
+    gravity = 0;
+    onLadder = true;
+    vspeed = 3;
+}
+}
 </string>
           </argument>
         </arguments>
