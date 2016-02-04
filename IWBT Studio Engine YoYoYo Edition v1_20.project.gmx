@@ -31,20 +31,19 @@
       <sprite>sprites\sprPlayMusic</sprite>
       <sprite>sprites\sprPlayerKiller</sprite>
       <sprite>sprites\sprPlayerStart</sprite>
+      <sprite>sprites\sprTransition</sprite>
     </sprites>
     <sprites name="player">
       <sprite>sprites\sprPlayerMask</sprite>
-      <sprite>sprites\sprPlayerMaskFlip</sprite>
       <sprite>sprites\sprPlayerIdle</sprite>
       <sprite>sprites\sprPlayerJump</sprite>
       <sprite>sprites\sprPlayerFall</sprite>
       <sprite>sprites\sprPlayerRunning</sprite>
-      <sprite>sprites\sprPlayerSliding</sprite>
       <sprite>sprites\sprBow</sprite>
       <sprite>sprites\sprBlood</sprite>
       <sprite>sprites\sprGameOver</sprite>
+      <sprite>sprites\sprBullet</sprite>
     </sprites>
-    <sprite>sprites\sprBullet</sprite>
     <sprites name="blocks">
       <sprite>sprites\sprBlockMask</sprite>
       <sprite>sprites\sprMiniBlock</sprite>
@@ -81,10 +80,21 @@
     </sprites>
     <sprites name="warps">
       <sprite>sprites\sprWarp</sprite>
+      <sprite>sprites\sprDoor1</sprite>
+      <sprite>sprites\sprDoor2</sprite>
     </sprites>
     <sprites name="items">
       <sprite>sprites\sprSecretItem</sprite>
       <sprite>sprites\sprBossItem</sprite>
+    </sprites>
+    <sprites name="drops">
+      <sprite>sprites\sprCoin</sprite>
+    </sprites>
+    <sprites name="enemies">
+      <sprite>sprites\sprSpikeUp</sprite>
+      <sprite>sprites\sprSpikeRight</sprite>
+      <sprite>sprites\sprSpikeLeft</sprite>
+      <sprite>sprites\sprSpikeDown</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -93,6 +103,8 @@
     <background>background\bJumpThrough</background>
     <background>background\bTree</background>
     <background>background\bStars</background>
+    <background>background\bGrass</background>
+    <background>background\bSkyTemp</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -124,6 +136,7 @@
       <script>scripts\scrStopMusic.gml</script>
       <script>scripts\scrDrop.gml</script>
       <script>scripts\scrBulletHit.gml</script>
+      <script>scripts\scrResetTriggers.gml</script>
     </scripts>
     <scripts name="functions">
       <script>scripts\scrMakeShapes.gml</script>
@@ -149,6 +162,7 @@
       <object>objects\objControlsMenu</object>
       <object>objects\objDifficultyMenu</object>
       <object>objects\objGameOverlay</object>
+      <object>objects\objTransition</object>
     </objects>
     <objects name="player">
       <object>objects\objPlayerStart</object>
@@ -171,6 +185,7 @@
       <object>objects\objBossBlock</object>
       <object>objects\objSaveBlocker</object>
       <object>objects\objSlope</object>
+      <object>objects\objBounceBlock</object>
     </objects>
     <objects name="platforms">
       <object>objects\objPlatform</object>
@@ -203,6 +218,7 @@
       <object>objects\objWarp</object>
       <object>objects\objWarpNext</object>
       <object>objects\objWarpAutosaveNext</object>
+      <object>objects\objDoor</object>
     </objects>
     <objects name="items">
       <object>objects\objSecretItem</object>
@@ -210,13 +226,21 @@
     </objects>
     <objects name="enemies">
       <object>objects\objEnemy</object>
+      <object>objects\objDashingEnemy</object>
       <object>objects\objAimedShootingEnemy</object>
       <object>objects\objSpinningShootingEnemy</object>
       <object>objects\objShootingEnemy</object>
       <object>objects\objEnemyBullet</object>
       <object>objects\objPlayerKiller</object>
       <object>objects\objDamageIndicator</object>
+      <object>objects\objRedDamageIndicator</object>
       <object>objects\objExplodingShootingEnemy</object>
+      <object>objects\objStationaryKillerUp</object>
+      <object>objects\objStationaryKillerRight</object>
+      <object>objects\objStationaryKillerLeft</object>
+      <object>objects\objStationaryKillerDown</object>
+      <object>objects\objLinearMovingKiller</object>
+      <object>objects\objSpinningKiller</object>
     </objects>
     <objects name="switches">
       <object>objects\objSwitchLock</object>
@@ -230,6 +254,9 @@
       <object>objects\objPowerup</object>
       <object>objects\objDrop</object>
     </objects>
+    <objects name="ladders">
+      <object>objects\objLadder</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <rooms name="init">
@@ -240,8 +267,9 @@
       <room>rooms\rDifficultySelect</room>
     </rooms>
     <rooms name="sample">
+      <room>rooms\rStageEnemyTest</room>
+      <room>rooms\rStage01_1</room>
       <room>rooms\rStage01_2</room>
-      <room>rooms\room7</room>
     </rooms>
     <room>rooms\rTemplate</room>
   </rooms>

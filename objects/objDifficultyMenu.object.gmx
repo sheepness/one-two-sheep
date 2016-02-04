@@ -156,13 +156,13 @@ else
         audio_play_sound(global.menuSound,0,0);
         select2 -= 1;
         if ((select2 == -1 &amp;&amp; !exists[select]) || (select2 &lt; -1))
-            select2 = 3;
+            select2 = 0;
     }
     else if (keyboard_check_pressed(vk_right))  //global.rightbutton
     {
         audio_play_sound(global.menuSound,0,0);
         select2 += 1;
-        if (select2 &gt; 3)
+        if (select2 &gt; 0)
         {
             if (exists[select])
                 select2 = -1;
@@ -225,32 +225,32 @@ else
     draw_set_halign(fa_left)
     draw_set_font(fDefault30);
     
-    draw_text(x+(i-1)*239+2,y,str[i]);
+    draw_text(x+(i-1)*255+2,y,str[i]);
     
     draw_set_font(fDefault12);
     
-    draw_text(x+(i-1)*239+10,y+70,"Deaths: "+string(death[i]));
-    draw_text(x+(i-1)*239+10,y+90,"Time: "+timeStr[i]);
+    draw_text(x+(i-1)*255+10,y+70,"Deaths: "+string(death[i]));
+    draw_text(x+(i-1)*255+10,y+90,"Time: "+timeStr[i]);
     
     draw_set_halign(fa_center);
     
     if (difSelect &amp;&amp; i == select)
     {
-        if(select2==-1) draw_text(x + (i-1)*239 + 65, y+49,"&lt; Load game &gt;");
-        else if(select2==0) draw_text(x + (i-1)*239 + 65, y+49,"&lt; Medium &gt;");
-        else if(select2==1) draw_text(x + (i-1)*239 + 65, y+49,"&lt; Hard &gt;");
-        else if(select2==2) draw_text(x + (i-1)*239 + 65, y+49,"&lt; Very Hard &gt;");
-        else if(select2==3) draw_text(x + (i-1)*239 + 65, y+49,"&lt; Impossible &gt;");
+        if(select2==-1) draw_text(x + (i-1)*255 + 65, y+49,"&lt; Load game &gt;");
+        else if(select2==0) draw_text(x + (i-1)*255 + 65, y+49,"&lt; New Game &gt;");
+        else if(select2==1) draw_text(x + (i-1)*255 + 65, y+49,"&lt; Hard &gt;");
+        else if(select2==2) draw_text(x + (i-1)*255 + 65, y+49,"&lt; Very Hard &gt;");
+        else if(select2==3) draw_text(x + (i-1)*255 + 65, y+49,"&lt; Impossible &gt;");
     }
     
     if(exists[i])
     {        
         if ((!difSelect) || (difSelect &amp;&amp; i != select))
         {
-            if(difficulty[i]==0){draw_text(x+(i-1)*239+65,y+49,"Medium")}
-            else if(difficulty[i]==1){draw_text(x+(i-1)*239+65,y+49,"Hard")}
-            else if(difficulty[i]==2){draw_text(x+(i-1)*239+65,y+49,"Very Hard")}
-            else if(difficulty[i]==3){draw_text(x+(i-1)*239+65,y+49,"Impossible")}
+            if(difficulty[i]==0){draw_text(x+(i-1)*255+65,y+49,"Medium")}
+            else if(difficulty[i]==1){draw_text(x+(i-1)*255+65,y+49,"Hard")}
+            else if(difficulty[i]==2){draw_text(x+(i-1)*255+65,y+49,"Very Hard")}
+            else if(difficulty[i]==3){draw_text(x+(i-1)*255+65,y+49,"Impossible")}
         }
         
         draw_set_font(fDefault24);
@@ -259,22 +259,22 @@ else
     {
         if ((!difSelect) || (difSelect &amp;&amp; i != select))
         {
-            draw_text(x+(i-1)*239+65,y+49,"No Data");
+            draw_text(x+(i-1)*255+65,y+49,"No Data");
         }
     }
     
     if(i == select)
     {
-        draw_sprite(sprPlayerIdle,playerIndex,x+(i-1)*239+65,y+310);
+        draw_sprite(sprPlayerIdle,playerIndex,x+(i-1)*255+65,y+310);
     }
 }
 
 //button info
 draw_set_font(fDefault12);
 draw_set_halign(fa_left);
-draw_text(34,556,"[Z] Back");
+draw_text(34,716,"[Z] Back");
 draw_set_halign(fa_right);
-draw_text(766,556,"[Shift] Accept");
+draw_text(990,716,"[Shift] Accept");
 </string>
           </argument>
         </arguments>

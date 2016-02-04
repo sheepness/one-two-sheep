@@ -5,3 +5,4 @@ bulletSpeed = argument3;
 bullet = instance_create(bulletX, bulletY, objEnemyBullet);
 bullet.direction = bulletDirection;
 bullet.speed = bulletSpeed;
+bullet.dmg = bulletDmg;

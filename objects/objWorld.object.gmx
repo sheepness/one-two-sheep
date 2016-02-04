@@ -56,7 +56,6 @@ audio_pause_sound(global.currentMusic);
 //set linear interpolation depending on what the current smoothing setting is
 texture_set_interpolation(global.smoothingMode);
 
-
 if (global.gameStarted)
 {
     //handle pausing
@@ -98,7 +97,7 @@ if (global.gameStarted)
     
     if (!global.gamePaused) //check if the game is currently paused
     {
-        if (keyboard_check_pressed(global.restartbutton))
+        if (keyboard_check_pressed(global.restartbutton))//&amp;&amp;!instance_exists(objPlayer))
         {
             global.hp = global.maxHP;
             //stop death music
@@ -372,7 +371,6 @@ scrSetRoomCaption();    //make sure caption stays updated
           <argument>
             <kind>1</kind>
             <string>///initialize everything
-
 //initialize all variables
 scrInitializeGlobals();
 

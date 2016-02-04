@@ -25,14 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>hp = 15;
+            <string>event_inherited();
+hp = 15;
 startX = x;
 startY = y;
 floating = false;
 floatSpeed = 3;
 following = false;
 followRange = 256;
-followSpeed = 1;
+followSpeed = 3.5;
 displaced = false;
 </string>
           </argument>
@@ -122,7 +123,7 @@ if (following) {
 if (instance_exists(objPlayer)) {
     if (point_distance(startX+sprite_width*0.5, startY+sprite_height*0.5, objPlayer.x, objPlayer.y)&lt;followRange) {
         displaced = true;
-        if (objPlayer.x&gt;x)
+        if (objPlayer.x&gt;x+sprite_width*0.5)
             hspeed = followSpeed;
         else 
             hspeed = -followSpeed;
@@ -144,6 +145,12 @@ if (instance_exists(objPlayer)) {
 }
 }
 if (!place_free(x+hspeed, y)) {
+if(hspeed &lt;= 0){move_contact_solid(180,abs(hspeed));}
+        if(hspeed &gt; 0){move_contact_solid(0,abs(hspeed));}
+    hspeed = -hspeed;
+}
+if (place_meeting(x+hspeed, y, objBounceBlock)) {
+    if (instance_place(x+hspeed, y, objBounceBlock).bounceID == bounceID)
     hspeed = -hspeed;
 }
 </string>

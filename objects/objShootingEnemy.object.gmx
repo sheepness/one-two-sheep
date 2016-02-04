@@ -28,6 +28,7 @@
             <string>event_inherited();
 range = 512;
 firing = false;
+bulletDmg = 1;
 </string>
           </argument>
         </arguments>
