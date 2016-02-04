@@ -52,6 +52,7 @@ warpY = 0;
             <kind>1</kind>
             <string>if (global.roomChange) {
 instance_create(0, 0, objPlayer);
+global.autosave = 1;
     if (warpX == 0 &amp;&amp; warpY == 0)
 {
     with(objPlayer)
@@ -92,7 +93,6 @@ else
     ///go to the next room
     with(objPlayer)
         instance_destroy();
-global.autosave = 1;
 global.transition = true;
 </string>
           </argument>
