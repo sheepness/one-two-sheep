@@ -26,6 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>roomTo = rTemplate;
+triggerReset = false;
+warpX = 0;
+warpY = 0;
 </string>
           </argument>
         </arguments>
@@ -49,9 +52,24 @@
           <argument>
             <kind>1</kind>
             <string>if (global.roomChange) {
+    instance_create(0, 0, objPlayer);
+global.autosave = 1;
+    if (warpX == 0 &amp;&amp; warpY == 0)
+{
+    with(objPlayer)
+        instance_destroy();
+}
+else
+{
+    objPlayer.x = warpX;
+    objPlayer.y = warpY;
+}
     global.transition = false;
     global.roomChange = false;
     room_goto(roomTo);
+    if (triggerReset) {
+        scrResetTriggers();
+    }
 }
 </string>
           </argument>
@@ -79,7 +97,6 @@
     ///go to the next room
     with(objPlayer)
         instance_destroy();
-global.autosave = 1;
 global.transition = true;
 }
 </string>

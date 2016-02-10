@@ -81,8 +81,6 @@
     <instance objName="objBlock" x="2080" y="352" name="inst_48B2D9E6" locked="0" code="" scaleX="2" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="2176" y="416" name="inst_31CFBF0A" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objSmoothCamera" x="128" y="544" name="inst_519EADB0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSwitch" x="1632" y="480" name="inst_12A147BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSwitchLock" x="1696" y="352" name="inst_5E68B495" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objEnemy" x="1280" y="416" name="inst_906201A7" locked="0" code="hp = 50;" scaleX="5" scaleY="5" colour="4294967295" rotation="0"/>
     <instance objName="objExplodingShootingEnemy" x="416" y="384" name="inst_9BDC1F32" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objAimedShootingEnemy" x="544" y="448" name="inst_50436054" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>

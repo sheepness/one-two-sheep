@@ -28,6 +28,7 @@
             <string>roomTo = rTemplate;
 warpX = 0;
 warpY = 0;
+triggerReset = false;
 </string>
           </argument>
         </arguments>
@@ -66,6 +67,9 @@ else
     global.transition = false;
     global.roomChange = false;
     room_goto(roomTo);
+    if (triggerReset) {
+        scrResetTriggers();
+    }
 }
 </string>
           </argument>

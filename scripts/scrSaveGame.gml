@@ -16,6 +16,20 @@ if (savePosition)
     global.saveAttackMin = global.attackMin;
     global.saveAttackMax = global.attackMax;
     
+    for (var i = 8; i >= 0; i--)
+    {
+        global.saveItem[i] = global.item[i];
+    }
+    for (var i = 500; i >= 0; i--)
+    {
+        global.saveOneTimeItem[i] = global.oneTimeItem[i];
+    }
+    for (var i = 500; i >= 0; i--)
+{
+    global.saveTreasureItem[i] = global.treasureItem[i];
+}
+
+    
     //check if player is saving inside of a wall or in the ceiling when the player's position is floored
     with (objPlayer)
     {
@@ -57,6 +71,20 @@ ds_list_add(list,global.saveGrav);
 ds_list_add(list,global.saveCoins);
 ds_list_add(list,global.saveAttackMin);
 ds_list_add(list,global.saveAttackMax);
+
+for (var i = 8; i >= 0; i--)
+    {
+        ds_list_add(list,global.saveItem[i]);
+    }
+    
+    for (var i = 500; i >= 0; i--)
+    {
+        ds_list_add(list,global.saveOneTimeItem[i]);
+    }
+    for (var i = 500; i >= 0; i--)
+    {
+        ds_list_add(list,global.saveTreasureItem[i]);
+    }
 
 //add md5 hash to the end to verify saves and make them harder to hack
 ds_list_add(list,md5_string_unicode(ds_list_write(list)+global.md5StrAdd));

@@ -71,7 +71,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>damage = global.attackMin+irandom(global.attackMax-global.attackMin);
+            <string>damage = global.attackMin+irandom(global.attackMax-global.attackMin)+global.bonusAttack;
 hp--;
 image_index++;
 with (other) {

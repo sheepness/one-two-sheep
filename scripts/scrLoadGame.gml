@@ -42,6 +42,20 @@ if (loadFile)
     ind += 1;
     global.saveAttackMax = ds_list_find_value(list, ind);
     ind += 1;
+    for (var i=8; i>=0; i--) {
+    global.saveItem[i] = ds_list_find_value(list, ind);
+    ind += 1;
+    }
+    for (var i = 500; i >= 0; i--)
+    {
+        global.saveOneTimeItem[i] = ds_list_find_value(list, ind);
+    ind += 1;
+    }
+    for (var i = 500; i >= 0; i--)
+    {
+        global.saveTreasureItem[i] = ds_list_find_value(list, ind);
+    ind += 1;
+    }
     
     //load md5 string from the save list
     var listMd5 = ds_list_find_value(list,ind);
@@ -83,6 +97,17 @@ global.grav = global.saveGrav;
 global.coins = global.saveCoins;
 global.attackMin = global.saveAttackMin;
 global.attackMax = global.saveAttackMax;
+for (var i=8; i>=0; i--) {
+    global.item[i] = global.saveItem[i];
+    }
+    for (var i = 500; i >= 0; i--)
+    {
+        global.oneTimeItem[i] = global.saveOneTimeItem[i];
+    }
+    for (var i = 500; i >= 0; i--)
+    {
+        global.treasureItem[i] = global.saveTreasureItem[i];
+    }
 
 global.player_djump = 1;    //make sure to give djump when spawning
 

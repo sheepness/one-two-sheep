@@ -1,4 +1,4 @@
-damage = global.attackMin+irandom(global.attackMax-global.attackMin);
+damage = global.attackMin+irandom(global.attackMax-global.attackMin)+global.bonusAttack;
 hp-=damage;
 with (other) {
     instance_destroy();

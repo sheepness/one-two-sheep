@@ -55,6 +55,7 @@
       <sprite>sprites\sprSlideBlockL</sprite>
       <sprite>sprites\sprSaveBlocker</sprite>
       <sprite>sprites\sprSlopeMask</sprite>
+      <sprite>sprites\sprDirtBlock</sprite>
     </sprites>
     <sprites name="platforms">
       <sprite>sprites\sprPlatform</sprite>
@@ -138,6 +139,8 @@
       <script>scripts\scrDrop.gml</script>
       <script>scripts\scrBulletHit.gml</script>
       <script>scripts\scrResetTriggers.gml</script>
+      <script>scripts\scrUseItem.gml</script>
+      <script>scripts\scrCheckKey.gml</script>
     </scripts>
     <scripts name="functions">
       <script>scripts\scrMakeShapes.gml</script>
@@ -188,6 +191,7 @@
       <object>objects\objSaveBlocker</object>
       <object>objects\objSlope</object>
       <object>objects\objBounceBlock</object>
+      <object>objects\objFadeBlock</object>
     </objects>
     <objects name="platforms">
       <object>objects\objPlatform</object>
@@ -224,8 +228,13 @@
       <object>objects\objRoomChangeWarp</object>
     </objects>
     <objects name="items">
-      <object>objects\objSecretItem</object>
-      <object>objects\objSecretIndicator</object>
+      <object>objects\objItem</object>
+      <object>objects\objOneTimeItem</object>
+      <object>objects\objItemIndicator</object>
+      <object>objects\objHealthPotion</object>
+      <object>objects\objWeapon</object>
+      <object>objects\objChest</object>
+      <object>objects\objKey</object>
     </objects>
     <objects name="enemies">
       <object>objects\objEnemy</object>
@@ -247,7 +256,6 @@
     </objects>
     <objects name="switches">
       <object>objects\objSwitchLock</object>
-      <object>objects\objSwitch</object>
     </objects>
     <objects name="drops">
       <object>objects\objHeal</object>

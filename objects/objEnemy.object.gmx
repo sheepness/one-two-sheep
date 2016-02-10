@@ -32,8 +32,8 @@ startY = y;
 floating = false;
 floatSpeed = 3;
 following = false;
-followRange = 256;
-followSpeed = 3.5;
+followRange = 512;
+followSpeed = 4.5;
 displaced = false;
 </string>
           </argument>
@@ -148,6 +148,11 @@ if (!place_free(x+hspeed, y)) {
 if(hspeed &lt;= 0){move_contact_solid(180,abs(hspeed));}
         if(hspeed &gt; 0){move_contact_solid(0,abs(hspeed));}
     hspeed = -hspeed;
+}
+if (!place_free(x, y+vspeed)) {
+if(vspeed &lt;= 0){move_contact_solid(90,abs(vspeed));}
+        if(vspeed &gt; 0){move_contact_solid(270,abs(vspeed));}
+    vspeed = -vspeed;
 }
 if (place_meeting(x+hspeed, y, objBounceBlock)) {
     if (instance_place(x+hspeed, y, objBounceBlock).bounceID == bounceID)

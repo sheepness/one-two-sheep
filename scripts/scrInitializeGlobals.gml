@@ -12,7 +12,7 @@ global.savePlayerXScale = 1;
 global.grav = 1;
 global.actualGrav = 1.75;
 global.saveGrav = 1;
-global.maxHP = 25;
+global.maxHP = 10;
 global.hp = global.maxHP;
 global.coins = 0;
 global.saveCoins = 0;
@@ -21,6 +21,7 @@ global.attackMin = 2;
 global.attackMax = 4;
 global.saveAttackMin = 2;
 global.saveAttackMax = 4;
+global.bonusAttack = 0;
 
 global.transition = false;
 global.roomChange = false;
@@ -28,6 +29,27 @@ global.roomChange = false;
 for (var i = 8; i >= 0; i--)
 {
     global.item[i] = 0;
+    global.saveItem[i] = 0;
+}
+
+for (var i = 500; i >= 0; i--)
+{
+    global.treasureItem[i] = 0;
+    global.saveTreasureItem[i] = 0;
+}
+
+global.headItem = 0;
+global.chestItem = 0;
+global.handItemOne = 0;
+global.handItemTwo = 0;
+global.legItem = 0 ;
+global.footItemOne = 0;
+global.footItemTwo = 0;
+
+for (var i = 500; i >= 0; i--)
+{
+        global.oneTimeItem[i] = 0;
+    global.saveOneTimeItem[i] = 0;
 }
 
 global.md5StrIn = "";

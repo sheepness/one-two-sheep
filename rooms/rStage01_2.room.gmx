@@ -53,7 +53,7 @@
   <instances>
     <instance objName="objPlayerStart" x="224" y="1280" name="inst_01442799" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="0" y="1344" name="inst_5FD11A68" locked="0" code="" scaleX="64" scaleY="6" colour="4294967295" rotation="0"/>
-    <instance objName="objSwitchLock" x="1984" y="1152" name="inst_225DD92C" locked="0" code="" scaleX="2" scaleY="6" colour="4294967295" rotation="0"/>
+    <instance objName="objSwitchLock" x="1984" y="1152" name="inst_225DD92C" locked="0" code="trg = 1;&#xA;" scaleX="2" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="objBlock" x="1984" y="0" name="inst_D76950DB" locked="0" code="" scaleX="2" scaleY="36" colour="4294967295" rotation="0"/>
     <instance objName="objLadder" x="1024" y="1088" name="inst_1A0DF4EE" locked="0" code="" scaleX="1" scaleY="8" colour="4294967295" rotation="0"/>
     <instance objName="objMovingPlatform" x="960" y="1088" name="inst_D0BA9F19" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
@@ -122,6 +122,14 @@
     <instance objName="objBlock" x="320" y="0" name="inst_5226BA92" locked="0" code="" scaleX="8" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objSpinningShootingEnemy" x="160" y="384" name="inst_754641BA" locked="0" code="floating = true;&#xA;" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objRoomChangeWarp" x="64" y="-32" name="inst_B7C156F9" locked="0" code="roomTo = rStage01_3;&#xA;" scaleX="8" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBlock" x="-32" y="1120" name="inst_378AAA69" locked="0" code="" scaleX="1" scaleY="8" colour="4294967295" rotation="0"/>
+    <instance objName="objWeapon" x="32" y="1248" name="inst_AC11B6C4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWeapon" x="96" y="1248" name="inst_3B4CD086" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objWeapon" x="160" y="1248" name="inst_E24B0CB7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objHealthPotion" x="64" y="1248" name="inst_367EC93C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objHealthPotion" x="128" y="1248" name="inst_E86E780F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objHealthPotion" x="192" y="1248" name="inst_6C6B1E40" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBlock" x="2048" y="1120" name="inst_7FEA4961" locked="0" code="" scaleX="1" scaleY="8" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bGrass" x="0" y="1344" w="32" h="32" xo="32" yo="0" id="10005541" name="inst_A7503CE5" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
